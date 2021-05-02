@@ -42,7 +42,9 @@ docker-compose build --pull && \
 docker-compose up --build --remove-orphans
 ```
 
-- After startup mlflow tracking server is running on "http://localhost:5000" (depending on your MLFLOW_PORT).  
+- After startup mlflow tracking server is running on "http://localhost:5000" (depending on your MLFLOW_PORT).
+
+- (optional) [start](./start.sh)/[stop](./stop.sh) mlflow setup with the provided scripts - env.sh with relevant settings must be available
 
 #### Test mlflow setup [TESTME](./TESTME.ipynb)
 
