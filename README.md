@@ -42,6 +42,7 @@ docker-compose build --pull && \
 docker-compose up --build --remove-orphans
 ```
 
+- Depending on your machine - the first start takes some time/minutes - as db needs to initialize/startup
 - After startup mlflow tracking server is running on "http://localhost:5000" (depending on your MLFLOW_PORT).
 
 - (optional) [start](./start.sh)/[stop](./stop.sh) mlflow setup with the provided scripts - env.sh with relevant settings must be available
