@@ -1,0 +1,11 @@
+# local conda environment used for testing mlflow setup
+name: mlflow
+channels:  
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.7
+  - mlflow
+  - jupyter
+  - notebook
+  - boto3

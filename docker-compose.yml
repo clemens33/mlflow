@@ -1,0 +1,52 @@
+version: '3'
+
+networks:
+  mlflow-network:
+
+services:
+  mlflow-db:
+    container_name: mlflow-db
+    image: mysql
+    restart: always
+    networks:
+      - mlflow-network
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./db:/var/lib/mysql
+    cap_add:
+      - SYS_NICE # to remove "mbind: Operation not permitted" warning (https://stackoverflow.com/questions/55559386/how-to-fix-mbind-operation-not-permitted-in-mysql-error-log)
+
+  mlflow-db-adminer:
+    container_name: mlflow-db-adminer
+    image: adminer
+    restart: always
+    networks:
+      - mlflow-network
+    depends_on: 
+      - mlflow-db
+    ports: 
+      - "${ADMINER_PORT}:8080"
+
+  mlflow:
+    container_name: mlflow
+    build: ./mlflow
+    image: mlflow
+    restart: always
+    depends_on:
+      - mlflow-db
+    ports:
+      - "${MLFLOW_PORT}:5000"
+    networks:
+      - mlflow-network
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - MLFLOW_S3_ENDPOINT_URL=${MLFLOW_S3_ENDPOINT_URL}
+      - MLFLOW_S3_IGNORE_TLS=${MLFLOW_S3_IGNORE_TLS}
+    command: mlflow server --backend-store-uri mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mlflow-db:3306/${MYSQL_DATABASE} --default-artifact-root ${MLFLOW_S3_BUCKET} --host 0.0.0.0

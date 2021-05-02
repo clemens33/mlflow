@@ -1,0 +1,10 @@
+# ignore private mlflow db data
+db/
+db
+
+# ignore private mlflow settings
+env.sh
+
+# others
+.idea
+*dummy*
