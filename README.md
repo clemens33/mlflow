@@ -1,11 +1,11 @@
-### Simple setup for mlflow + mysql backend store using docker compose - artifact store points to external s3 bucket+host+credentials
+## Simple setup for mlflow + mysql backend store using docker compose 
+**(artifact store points to external s3 bucket+host+credentials - for simple (one command) self hosted s3 (minio) storage refer to other repo (e.g. https://github.com/clemens33/minio)**
 
 - Requires [docker compose](https://docs.docker.com/compose/)
 - Clone/fork this repo, open terminal and cd into it
 - Copy/adapt the following command and run it 
   - it creates a local env.sh (not versioned - gitignored) file with all relevant settings (adapt as needed).
   - for artifact storage the mlflow s3 artifact part of the settings must be set accordingly - if not mlflow within the container starts and runs but has no access to any s3 artifacts
-  - for simple (one command) self hosted s3 (minio) storage refer to other repo (e.g. https://github.com/clemens33/minio)
 
 ```
 echo '#!/bin/bash
@@ -46,7 +46,7 @@ docker-compose up --build --remove-orphans
 
 - (optional) [start](./start.sh)/[stop](./stop.sh) mlflow setup with the provided scripts - env.sh with relevant settings must be available
 
-#### Test mlflow setup [TESTME](./TESTME.ipynb)
+### Test mlflow setup [TESTME](./TESTME.ipynb)
 
 - Create a test conda environment (requires [conda](https://docs.anaconda.com/anaconda/install/)
 - To test the following steps setup the following conda environment
