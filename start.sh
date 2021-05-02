@@ -2,7 +2,7 @@
 
 source env.sh
 
-ln -s $MLFLOW_DB_LOCATION ./mlflow-db
+if [ ! -d "./db" ] ; then ln -s $MLFLOW_DB_LOCATION ./db; fi
 
 docker-compose pull
 docker-compose build --pull
