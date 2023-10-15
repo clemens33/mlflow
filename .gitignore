@@ -1,6 +1,8 @@
 # ignore private mlflow db data
+.venv
 db/
 db
+data
 
 # ignore private mlflow settings
 env.sh
@@ -8,3 +10,11 @@ env.sh
 # others
 .idea
 *dummy*
+.vscode
+requirements.txt
+
+# ignore private mlflow data
+mlruns
+mlartifacts
+metrics
+
