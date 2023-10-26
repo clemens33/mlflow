@@ -8,6 +8,18 @@ To generate templates from a chart with default values, run:
 helm template mlflow
 ```
 
+## Publish Chart
+
+Navigate to /charts and run:
+
+```bash
+helm package mlflow
+```
+
+```bash
+helm repo index --url https://clemens33.github.io/mlflow/charts .
+```
+
 
 
 

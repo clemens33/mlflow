@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  mlflow:
+  - apiVersion: v2
+    appVersion: 2.7.1-py3.10
+    created: "2023-10-26T18:09:22.098298619+02:00"
+    description: A MLflow Helm chart for Kubernetes
+    digest: d39a930aca7ce49d6bf38b1e4118d3a768209c7757df633f9ed6f80bb26e8909
+    name: mlflow
+    type: application
+    urls:
+    - https://clemens33.github.io/mlflow/charts/mlflow-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-10-26T18:09:22.097936556+02:00"
