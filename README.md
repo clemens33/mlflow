@@ -8,16 +8,14 @@ Requires [poetry](https://python-poetry.org/), [docker](https://docs.docker.com/
 poetry install
 ```
 
-Build image (infer python and mlflow versions from poetry)
+Build image, set environment variables, and start containers (within docker folder)
 
 ```bash
 cd docker && \
-./build_image.sh
-```
-
-Define environment variables (run in root folder of this repo)
-
-```bash
+./build_image.sh \
+--repository localhost/mlflow \
+--tag latest && \
+\
 echo '#!/bin/bash
 
 # mlflow settings
@@ -33,12 +31,8 @@ export AWS_ACCESS_KEY_ID=youraccesskey
 export AWS_SECRET_ACCESS_KEY=yoursecretaccesskey
 export MLFLOW_S3_ENDPOINT_URL=https://minio.yourdomain.com
 export MLFLOW_S3_BUCKET=s3://yourbucketname/yourfolder
-export MLFLOW_S3_IGNORE_TLS=true' > env.sh
-```
-
-Start up mlflow + postgres backend
-
-```bash
+export MLFLOW_S3_IGNORE_TLS=true' > env.sh && \
+\
 source env.sh && \
 \
 if [ ! -d "./data/pgdata" ] ; then mkdir -p $POSTGRES_DATA; fi && \
@@ -65,6 +59,8 @@ poetry run python samples/artifacts.py
 Navigate to [http://localhost:5000](http://localhost:5000) to see the MLflow UI and the experiment tracking.
 
 ## Local Setup
+
+Using plain python and mlflow server.
 
 ### Basic
 
@@ -161,6 +157,4 @@ poetry run mlflow server \
 
 ## [Docker](docker/README.md)
 
-## [Helm](helm/README.md)
-
-(upcoming)
+## [Helm](charts/README.md)

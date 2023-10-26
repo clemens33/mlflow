@@ -14,26 +14,26 @@ Optional run help
 ./build_image.sh --help
 ```
 
-```
-Usage: ./build_image.sh [OPTIONS]
-
-Options:
-  -h, --help            Show this help message
-  -t, --tag             Specify the registry, image name and tag - e.g. my.registry.io/ml/mlflow:2.7.1-py3.10
-  -v, --version         Specify a version for the image - e.g. v1
-  -p, --useproxy        Use specified http proxy for docker build
-  -nc,--nocache         Do not use cache when building the image
-```
-
-Custom name/tag
+Custom registry and image name (tag is inferred).
 ```bash
-./build_image.sh --tag localhost/mlflow
+./build_image.sh \
+--registry docker.io/clemens33/mlflow \
+--push
+```
+
+Build and push to registry
+
+```bash
+./build_image.sh \
+--registry docker.io/clemens33/mlflow \
+--tag latest \
+--push
 ```
 
 ## Run Container
 
 ```bash
-docker run -d --name mlflow -p 5000:5000 localhost/mlflow
+docker run -d --name mlflow -p 5000:5000 localhost/mlflow:2.7.1-py3.10
 ```
 
 Persist mlruns and mlartifacts on host machine (not using any backend)
@@ -42,29 +42,5 @@ Persist mlruns and mlartifacts on host machine (not using any backend)
 if [ ! -d ./data ]; then mkdir ./data; fi && \
 docker run -d --name mlflow -p 5000:5000 \
 -v $(pwd)/data:/home/mlflow \
-localhost/mlflow
-```
-
-## Run Container with Backend
-
-```bash
-docker network create ml-network
-```
-
-Using postgres backend, persisting data on host machine
-
-```bash
-if [ ! -d $(pwd)/data/pgdata ]; then mkdir $(pwd)/data/pgdata; fi && \
-docker run -d --name ml-postgres --network ml-network -p 5432:5432 \
--e POSTGRES_USER=postgres \
--e POSTGRES_PASSWORD=postgres_password \
--e POSTGRES_DB=mlflow \
--v $(pwd)/data/pgdata:/var/lib/postgresql/data \
-postgres:latest
-```
-
-```bash
-docker run -d --name mlflow --network ml-network -p 5000:5000 \
--e MLFLOW_BACKEND_STORE_URI=postgresql+psycopg2://postgres:postgres_password@ml-postgres:5432/mlflow \
-localhost/mlflow
+localhost/mlflow:2.7.1-py3.10
 ```

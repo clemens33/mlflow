@@ -21,7 +21,7 @@ services:
     
   mlflow:
     container_name: mlflow
-    image: localhost/mlflow
+    image: localhost/mlflow:latest
     restart: always
     depends_on:
       - mlflow-db
