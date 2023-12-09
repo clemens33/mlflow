@@ -3,7 +3,7 @@
 import mlflow
 
 # Set the tracking URI
-mlflow_uri = "http://localhost:5000" 
+mlflow_uri = "http://localhost:5000"
 mlflow.set_tracking_uri(mlflow_uri)
 
 print(f"Tracking at: {mlflow.get_tracking_uri()}")

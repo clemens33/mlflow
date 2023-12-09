@@ -5,7 +5,10 @@ db
 data
 
 # ignore private mlflow settings
+.env.sh
+.env_azure.sh
 env.sh
+env_azure.sh
 
 # others
 .idea
