@@ -1,5 +1,7 @@
 # MLflow Container Setup
 
+Setup focuses on experiment and artifact tracking using [mlflow](https://mlflow.org/docs/latest/tracking.html). 
+
 ## Quick start
 
 Requires [poetry](https://python-poetry.org/), [docker](https://docs.docker.com/engine/install/) and [docker compose](https://docs.docker.com/compose/).
@@ -27,13 +29,13 @@ export POSTGRES_USER=mlflow
 export POSTGRES_PASSWORD=mlflow123
 
 # mlflow s3 storage backend settings (e.g. can be minio)
+export MLFLOW_ARTIFACTS_DESTINATION=s3://yourbucketname/yourfolder
 export AWS_ACCESS_KEY_ID=youraccesskey
 export AWS_SECRET_ACCESS_KEY=yoursecretaccesskey
 export MLFLOW_S3_ENDPOINT_URL=https://minio.yourdomain.com
-export MLFLOW_S3_BUCKET=s3://yourbucketname/yourfolder
-export MLFLOW_S3_IGNORE_TLS=true' > env.sh && \
+export MLFLOW_S3_IGNORE_TLS=true' > .env.sh && \
 \
-source env.sh && \
+source .env.sh && \
 \
 if [ ! -d "./data/pgdata" ] ; then mkdir -p $POSTGRES_DATA; fi && \
 \
@@ -99,6 +101,8 @@ poetry run python samples/tracking.py
 
 #### Artifacts Store
 
+##### s3
+
 Set S3 credentials and endpoint URL
 
 ```bash
@@ -119,7 +123,7 @@ poetry run mlflow server \
 --host 0.0.0.0
 ```
 
-Run (client requires s3 credentials)
+Run (client reqpuires s3 credentials)
 
 ```bash
 source .env.sh && \
@@ -137,6 +141,33 @@ poetry run mlflow server \
 ```
 
 Run (client do not need to know s3 credentials)
+
+```bash
+poetry run python samples/artifacts.py
+```
+
+##### azure blob storage
+
+Set azure credentials and endpoint URL - more info [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys) and [here](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python?tabs=connection-string%2Croles-azure-portal%2Csign-in-azure-cli#authenticate-to-azure-and-authorize-access-to-blob-data).
+
+```bash
+echo "
+export AZURE_STORAGE_CONNECTION_STRING='AccountName=<YOUR_ACCOUNT_NAME>;AccountKey=<YOUR_KEY>;EndpointSuffix=core.windows.net;DefaultEndpointsProtocol=https;'
+export AZURE_STORAGE_ACCESS_KEY='<YOUR_KEY>'
+" > .env_azure.sh
+```
+
+Proxied azure blob storage backend for artifacts (client do not need to know azure credentials)
+
+```bash
+source .env_azure.sh && \
+poetry run mlflow server \
+--backend-store-uri postgresql+psycopg2://postgres:postgres_password@localhost:5432/mlflow \
+--artifacts-destination wasbs://my-container@my-storage-account.blob.core.windows.net/my-folder \
+--host 0.0.0.0
+```
+
+Run (client do not need to know azure credentials)
 
 ```bash
 poetry run python samples/artifacts.py

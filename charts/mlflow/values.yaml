@@ -9,25 +9,32 @@ image:
   tag: "latest"
 
 # mlflow backend store settings
-db:
-  POSTGRES_HOST: postgres
-  POSTGRES_PORT: 5432
-  POSTGRES_DB: mlflow
+backend:
+  secretName: "mlflow-backend-secret"
   # POSTGRES_USER: ... (must be provided as secret to kubernetes namespace)
   # POSTGRES_PASSWORD: ... (must be provided as secret to kubernetes namespace)
+  postgres:
+    host: postgres
+    port: 5432
+    db: mlflow
 
 # mlflow artifact store settings
-s3:
-  MLFLOW_S3_ENDPOINT_URL: http://minio:9000
-  MLFLOW_S3_IGNORE_TLS: true
-  AWS_DEFAULT_REGION: us-east-1
-  # AWS_SECRET_ACCESS_KEY: ... (must be provided as secret to kubernetes namespace)
+storage:
+  artifactsDestination: "" # s3://mlflow/test/artifacts or wasbs://mlflow@my-storage-account.blob.core.windows.net/my-folder
+  secretName: "mlflow-storage-secret"
   # AWS_ACCESS_KEY_ID: ... (must be provided as secret to kubernetes namespace)
+  # AWS_SECRET_ACCESS_KEY: ... (must be provided as secret to kubernetes namespace)
+  # AZURE_STORAGE_CONNECTION_STRING: ... (must be provided as secret to kubernetes namespace)
+  # AZURE_STORAGE_ACCESS_KEY: ... (must be provided as secret to kubernetes namespace)
+  s3:
+    endpointUrl: "" # http://minio:9000
+    ignoreTls: true
+    defaultRegion: "" # us-east-1
+  azure:
+    uploadDownloadTimeout: 1200
 
-# mlflow settings
-MLFLOW_ARTIFACTS_DESTINATION: s3://mlflow/test/artifacts # s3://my-bucket-name/...
-MLFLOW_EXPORT_PROMETHEUS: true # export prometheus metrics to /home/mlflow/metrics folder within the container
-MLFLOW_WORKERS: 4
+exposePrometheusMetrics: true
+workers: 4
 
 nameOverride: ""
 fullnameOverride: ""

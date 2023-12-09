@@ -15,8 +15,12 @@ if [[ "$1" = "server" ]]; then
             
             # e.g. (s3://my-bucket/mlflow/test)
             ARTIFACTS_DESTINATION="$MLFLOW_ARTIFACTS_DESTINATION"
+        elif [[ -n $AZURE_STORAGE_CONNECTION_STRING && -n $AZURE_STORAGE_ACCESS_KEY ]]; then
+            
+            # e.g. (wasbs://my-container@my-storage-account.blob.core.windows.net/my-folder)
+            ARTIFACTS_DESTINATION="$MLFLOW_ARTIFACTS_DESTINATION"
         else
-            echo "Missing AWS credentials or S3 configuration, using local artifacts destination."
+            echo "Missing AWS credentials, S3 configuration or Azure Storage configuration, using local artifacts destination."
                         
             ARTIFACTS_DESTINATION="$MLFLOW_HOME_DIR/mlartifacts"
         fi

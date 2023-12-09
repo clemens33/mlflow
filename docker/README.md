@@ -17,15 +17,15 @@ Optional run help
 Custom registry and image name (tag is inferred).
 ```bash
 ./build_image.sh \
---registry docker.io/clemens33/mlflow \
+--repository docker.io/clemens33/mlflow \
 --push
 ```
 
-Build and push to registry
+Build and push to repository
 
 ```bash
 ./build_image.sh \
---registry docker.io/clemens33/mlflow \
+--repository docker.io/clemens33/mlflow \
 --tag latest \
 --push
 ```
@@ -33,7 +33,7 @@ Build and push to registry
 ## Run Container
 
 ```bash
-docker run -d --name mlflow -p 5000:5000 localhost/mlflow:2.7.1-py3.10
+docker run -d --name mlflow -p 5000:5000 localhost/mlflow:2.9.1-py3.10
 ```
 
 Persist mlruns and mlartifacts on host machine (not using any backend)
@@ -42,5 +42,5 @@ Persist mlruns and mlartifacts on host machine (not using any backend)
 if [ ! -d ./data ]; then mkdir ./data; fi && \
 docker run -d --name mlflow -p 5000:5000 \
 -v $(pwd)/data:/home/mlflow \
-localhost/mlflow:2.7.1-py3.10
+localhost/mlflow:2.9.1-py3.10
 ```
