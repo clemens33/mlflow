@@ -9,6 +9,6 @@ entries:
       name: mlflow
       type: application
       urls:
-        - https://clemens33.github.io/mlflow/charts/mlflow-2.9.1.tgz
+        - https://clemens33.github.io/mlflow/mlflow-2.9.1.tgz
       version: 2.9.1
 generated: "2023-12-09T17:24:33.577604936+01:00"

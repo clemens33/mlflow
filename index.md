@@ -18,7 +18,7 @@ helm install my-mlflow mlflow
 
 ## Values
 
-Please check out [values.yaml](charts/mlflow/values.yaml) for all available values and defaults.
+Please check out [values.yaml](values.yaml) for all available values and defaults.
 
 
 
