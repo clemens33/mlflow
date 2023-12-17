@@ -10,14 +10,14 @@ helm template mlflow
 
 ## Publish Chart
 
-Navigate to /charts and run:
+Navigate to root of repo and run:
 
 ```bash
-helm package mlflow
+helm package charts/mlflow
 ```
 
 ```bash
-helm repo index --url https://clemens33.github.io/mlflow/charts .
+helm repo index --url https://clemens33.github.io/mlflow .
 ```
 
 
