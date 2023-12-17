@@ -34,6 +34,15 @@ if [[ "$1" = "server" ]]; then
         PROMETHEUS_ARG=""
     fi
 
+    # to disable db upgrade, set env var MLFLOW_NO_DB_UPGRADE=1
+    if [[ -z $MLFLOW_NO_DB_UPGRADE ]]; then
+        echo "Running MLFlow database upgrade..."
+        
+        mlflow db upgrade $BACKEND_STORE_URI
+    else
+        echo "Skipping MLFlow database upgrade..."
+    fi
+
     echo "Starting MLFlow server..."
     mlflow server \
     --backend-store-uri $BACKEND_STORE_URI \
