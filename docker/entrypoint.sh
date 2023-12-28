@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 
 MLFLOW_HOME_DIR="/home/mlflow"
@@ -36,21 +37,26 @@ if [[ "$1" = "server" ]]; then
 
     # to disable db upgrade, set env var MLFLOW_NO_DB_UPGRADE=1
     if [[ -z $MLFLOW_NO_DB_UPGRADE ]]; then
-        echo "Running MLFlow database upgrade..."
+        echo "Trying to run MLFlow database upgrade..."
         
-        mlflow db upgrade $BACKEND_STORE_URI
+        # this will fail on first run, but it's ok
+        mlflow db upgrade $BACKEND_STORE_URI || echo "MLFlow database upgrade failed, but server will continue trying to start."
     else
         echo "Skipping MLFlow database upgrade..."
     fi
+
+    # arbitrary additional options - check out https://www.mlflow.org/docs/latest/cli.html#mlflow-server
+    ADDITIONAL_OPTIONS=${MLFLOW_ADDITIONAL_OPTIONS:-""}
 
     echo "Starting MLFlow server..."
     mlflow server \
     --backend-store-uri $BACKEND_STORE_URI \
     --artifacts-destination $ARTIFACTS_DESTINATION \
     $PROMETHEUS_ARG \
+    $ADDITIONAL_OPTIONS \
     --workers ${MLFLOW_WORKERS:-4} \
-    --host 0.0.0.0 \
-    --port 5000
+    --host ${MLFLOW_HOST:-0.0.0.0} \
+    --port ${MLFLOW_PORT:-5000}
 else
     eval "$@"
 fi
