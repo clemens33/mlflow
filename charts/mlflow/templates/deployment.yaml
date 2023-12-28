@@ -70,13 +70,22 @@ spec:
             value: {{ .Values.exposePrometheusMetrics | quote }}
           - name: MLFLOW_WORKERS
             value: {{ .Values.workers | quote }}
-
-          # storage and backend secrets
+          
           envFrom:
+          # storage and backend secrets
           - secretRef:
               name: {{ .Values.backend.secretName }}
           - secretRef:
               name: {{ .Values.storage.secretName }}
+          # adding optional extra env from configmaps
+          {{- with .Values.extraEnvFrom }}
+          {{- range . }}
+          {{- if .configMapRef.name }}
+          - configMapRef:
+              name: {{ .configMapRef.name }}
+          {{- end }}
+          {{- end }}
+          {{- end }}
           
           livenessProbe:
             httpGet:
