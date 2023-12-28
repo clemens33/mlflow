@@ -43,3 +43,6 @@ services:
       # storage
       - MLFLOW_ARTIFACTS_DESTINATION=${MLFLOW_ARTIFACTS_DESTINATION}
     command: "server"
+    volumes:
+      # only relevant if MLFLOW_ARTIFACTS_DESTINATION is not s3 or azure
+      - ${STORAGE_DATA}:/home/mlflow/mlartifacts

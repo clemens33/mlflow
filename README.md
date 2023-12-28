@@ -22,22 +22,25 @@ echo '#!/bin/bash
 
 # mlflow settings
 export MLFLOW_PORT=5000
+
 export POSTGRES_DATA=$(pwd)/data/pgdata
+export STORAGE_DATA=$(pwd)/data/storage
 
 # db settings
 export POSTGRES_USER=mlflow
 export POSTGRES_PASSWORD=mlflow123
 
-# mlflow s3 storage backend settings (e.g. can be minio)
-export MLFLOW_ARTIFACTS_DESTINATION=s3://yourbucketname/yourfolder
-export AWS_ACCESS_KEY_ID=youraccesskey
-export AWS_SECRET_ACCESS_KEY=yoursecretaccesskey
-export MLFLOW_S3_ENDPOINT_URL=https://minio.yourdomain.com
-export MLFLOW_S3_IGNORE_TLS=true' > .env.sh && \
+# (optional) mlflow s3 storage backend settings (e.g. can be minio)
+# export MLFLOW_ARTIFACTS_DESTINATION=s3://yourbucketname/yourfolder
+# export AWS_ACCESS_KEY_ID=youraccesskey
+# export AWS_SECRET_ACCESS_KEY=yoursecretaccesskey
+# export MLFLOW_S3_ENDPOINT_URL=https://minio.yourdomain.com
+# export MLFLOW_S3_IGNORE_TLS=true' > .env.sh && \
 \
 source .env.sh && \
 \
 if [ ! -d "./data/pgdata" ] ; then mkdir -p $POSTGRES_DATA; fi && \
+if [ ! -d "./data/storage" ] ; then mkdir -p $STORAGE_DATA; fi && \
 \
 docker compose up -d
 ```
