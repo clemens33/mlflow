@@ -20,7 +20,26 @@ spec:
 	{{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
-    spec:      
+    spec:
+      initContainers:
+        - name: postgres-db-connection-check
+          image: busybox:stable
+          command:
+          - sh
+          - -c
+          - |
+            retries={{ .Values.postgresConnectionCheck.maxRetries }}
+            interval={{ .Values.postgresConnectionCheck.retryInterval }}
+            while ! nc -zv {{ .Values.backend.postgres.host }} {{ .Values.backend.postgres.port | quote }}; do
+              sleep $interval
+              retries=$((retries - 1))
+              if [ $retries -le 0 ]; then
+                echo "Postgres is not available for connection after maximum retries, exiting"
+                exit 1
+              fi
+              echo "Waiting for postgres db connection, retries left: $retries"
+            done
+            echo "Postgres is available for connection"
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
