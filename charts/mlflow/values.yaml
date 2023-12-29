@@ -85,3 +85,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+postgresConnectionCheck:
+  maxRetries: 100
+  retryInterval: 3
