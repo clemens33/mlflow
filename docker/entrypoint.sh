@@ -6,7 +6,7 @@ MLFLOW_HOME_DIR="/home/mlflow"
 cd $MLFLOW_HOME_DIR
 
 if [[ "$1" = "server" ]]; then
-    shift 1        
+    shift 1
 
     # e.g. (postgresql+psycopg2://postgres:postgres_password@localhost:5432/mlflow)
     BACKEND_STORE_URI=${MLFLOW_BACKEND_STORE_URI:-$MLFLOW_HOME_DIR/mlruns}
@@ -47,13 +47,12 @@ if [[ "$1" = "server" ]]; then
 
     # arbitrary additional options - check out https://www.mlflow.org/docs/latest/cli.html#mlflow-server
     ADDITIONAL_OPTIONS=${MLFLOW_ADDITIONAL_OPTIONS:-""}
-
+    
     echo "Starting MLFlow server..."
-    mlflow server \
+    echo $ADDITIONAL_OPTIONS | xargs mlflow server \
     --backend-store-uri $BACKEND_STORE_URI \
     --artifacts-destination $ARTIFACTS_DESTINATION \
     $PROMETHEUS_ARG \
-    $ADDITIONAL_OPTIONS \
     --workers ${MLFLOW_WORKERS:-4} \
     --host ${MLFLOW_HOST:-0.0.0.0} \
     --port ${MLFLOW_PORT:-5000}
