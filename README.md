@@ -192,3 +192,16 @@ poetry run mlflow server \
 ## [Docker](docker/README.md)
 
 ## [Helm](charts/README.md)
+
+For running mlflow as tracking service it is highly recommended to use gunicorn with gevent workers (non blocking io optimized). The following describes a corresponding config map
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mlflow-additional-config
+data:
+  MLFLOW_HOST: "0.0.0.0"
+  MLFLOW_PORT: "5000"
+  MLFLOW_ADDITIONAL_OPTIONS: "--gunicorn-opts '--worker-class gevent --threads 4 --timeout 300 --keep-alive 300 --log-level INFO'"
+```
