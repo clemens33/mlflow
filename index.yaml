@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   mlflow:
   - apiVersion: v2
+    appVersion: 2.9.10-py3.11
+    created: "2024-02-02T19:13:00.049888019+01:00"
+    description: A MLflow Helm chart for Kubernetes
+    digest: d6249ddad0c7bc014d95f4904f209fd1bb4117493284271bc3f83cbbf33e5dc4
+    name: mlflow
+    type: application
+    urls:
+    - https://clemens33.github.io/mlflow/mlflow-2.9.10-1.tgz
+    version: 2.9.10-1
+  - apiVersion: v2
     appVersion: 2.9.2-py3.10
-    created: "2023-12-29T11:59:07.914955918+01:00"
+    created: "2024-02-02T19:13:00.051530229+01:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 0d8ae33e78d1a0a63317a0dce3b6470247110e9b9f5c8910727d155deb161d22
     name: mlflow
@@ -13,7 +23,7 @@ entries:
     version: 2.9.2
   - apiVersion: v2
     appVersion: 2.9.2-py3.11
-    created: "2023-12-29T11:59:07.914666595+01:00"
+    created: "2024-02-02T19:13:00.050978426+01:00"
     description: A MLflow Helm chart for Kubernetes
     digest: d6480c65f9966f9b00135017a0e9575f194a3c5eb2b797424da6956c61e12114
     name: mlflow
@@ -23,7 +33,7 @@ entries:
     version: 2.9.2-3
   - apiVersion: v2
     appVersion: 2.9.2-py3.11
-    created: "2023-12-29T11:59:07.914350021+01:00"
+    created: "2024-02-02T19:13:00.050442223+01:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 5459f4c0dfa568b967f5d3547ff0d95e9008633d69952c396de53f343b651a98
     name: mlflow
@@ -33,7 +43,7 @@ entries:
     version: 2.9.2-2
   - apiVersion: v2
     appVersion: 2.9.1-py3.10
-    created: "2023-12-29T11:59:07.914065837+01:00"
+    created: "2024-02-02T19:13:00.049383816+01:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 0205d53d5443db790cf4c47f26a2c22f19ecfa36cd3709dc779091c59c678612
     name: mlflow
@@ -43,7 +53,7 @@ entries:
     version: 2.9.1
   - apiVersion: v2
     appVersion: 2.7.1-py3.10
-    created: "2023-12-29T11:59:07.913773654+01:00"
+    created: "2024-02-02T19:13:00.048666412+01:00"
     description: A MLflow Helm chart for Kubernetes
     digest: d39a930aca7ce49d6bf38b1e4118d3a768209c7757df633f9ed6f80bb26e8909
     name: mlflow
@@ -51,4 +61,4 @@ entries:
     urls:
     - https://clemens33.github.io/mlflow/mlflow-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-29T11:59:07.91340785+01:00"
+generated: "2024-02-02T19:13:00.047742707+01:00"
