@@ -2,5 +2,5 @@ apiVersion: v2
 name: mlflow
 description: A MLflow Helm chart for Kubernetes
 type: application
-version: 2.10.0-1
-appVersion: "2.9.10-py3.11"
+version: 2.10.2-1
+appVersion: "2.10.2-py3.11"
