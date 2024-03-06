@@ -33,7 +33,11 @@ Build and push to repository
 ## Run Container
 
 ```bash
-docker run -d --name mlflow -p 5000:5000 localhost/mlflow:2.10.2-py3.11
+docker run -d --name mlflow -p 5000:5000 localhost/mlflow:2.11.1-py3.11
+```
+
+```bash
+docker run -d --name mlflow -p 5000:5000 docker.io/clemens33/mlflow:2.11.1-py3.11
 ```
 
 Persist mlruns and mlartifacts on host machine (not using any backend)
@@ -42,6 +46,6 @@ Persist mlruns and mlartifacts on host machine (not using any backend)
 if [ ! -d ./data ]; then mkdir ./data; fi && \
 docker run -d --name mlflow -p 5000:5000 \
 -v $(pwd)/data:/home/mlflow \
-localhost/mlflow:2.10.2-py3.11
+localhost/mlflow:2.11.1-py3.11
 ```
 
