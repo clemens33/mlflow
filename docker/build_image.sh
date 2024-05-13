@@ -10,6 +10,7 @@ show_help() {
   echo "  -p, --proxy           Use specified http proxy for docker build - e.g. http://localhost:3128, default not set"
   echo "  -pu,--push            Push the image to the repository after building it, default not set"
   echo "  -nc,--nocache         Do not use cache when building the image"
+  echo "  -g, --genai           Include genai requirements in the image"
 }
 
 while [[ "$#" -gt 0 ]]; do
@@ -19,13 +20,15 @@ while [[ "$#" -gt 0 ]]; do
     -t|--tag) TAG="$2"; shift; shift ;;    
     -p|--proxy) USEPROXY=1; HTTP_PROXY="$2"; shift; shift ;;
     -pu|--push) PUSH=1; shift ;;
-    -nc|--nocache) NO_CACHE="--no-cache"; shift ;;    
-    *) echo "Unknown parameter: $1"; show_help; exit 1 ;;    
+    -nc|--nocache) NO_CACHE="--no-cache"; shift ;;
+    -g|--genai) GENAI="--with=genai"; shift ;;
+    *) echo "Unknown parameter: $1"; show_help; exit 1 ;;
   esac
 done
 
 # Export requirements from poetry and infer python and mlflow versions
-poetry export -f requirements.txt --output requirements.txt --without-hashes
+# if genai is set, include it in the requirements
+poetry export -f requirements.txt --output requirements.txt --without-hashes ${GENAI}
 REQUIREMENTS_FILE="requirements.txt"
 PYTHON_VERSION=$(grep -m1 'python_version >=' $REQUIREMENTS_FILE | awk -F'"' '{print $2}')
 MLFLOW_VERSION=$(grep -m1 'mlflow==' $REQUIREMENTS_FILE | awk -F'==' '{print $2}' | awk '{print $1}')
@@ -33,7 +36,12 @@ MLFLOW_VERSION=$(grep -m1 'mlflow==' $REQUIREMENTS_FILE | awk -F'==' '{print $2}
 # Set default values if not provided
 NO_CACHE=${NO_CACHE:-""}
 REPOSITORY=${REPOSITORY:-"localhost/mlflow"}
-TAG=${TAG:-"${MLFLOW_VERSION}-py${PYTHON_VERSION}"}
+
+if [[ -n "$GENAI" ]]; then
+    TAG=${TAG:-"${MLFLOW_VERSION}-deployments-server-py${PYTHON_VERSION}"}
+else    
+    TAG=${TAG:-"${MLFLOW_VERSION}-py${PYTHON_VERSION}"}
+fi
 
 # Set fully qualified image name/tag
 TAG="${REPOSITORY}:${TAG}"

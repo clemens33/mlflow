@@ -56,6 +56,12 @@ if [[ "$1" = "server" ]]; then
     --workers ${MLFLOW_WORKERS:-4} \
     --host ${MLFLOW_HOST:-0.0.0.0} \
     --port ${MLFLOW_PORT:-5000}
+elif [[ "$1" = "deployments-server" ]]; then
+    mlflow deployments start-server \
+    --config-path $MLFLOW_HOME_DIR/config.yaml \
+    --host ${MLFLOW_HOST:-0.0.0.0} \
+    --port ${MLFLOW_PORT:-5000} \
+    --workers ${MLFLOW_WORKERS:-4}
 else
     eval "$@"
 fi

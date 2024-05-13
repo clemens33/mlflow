@@ -9,6 +9,7 @@ data
 .env_azure.sh
 env.sh
 env_azure.sh
+.env-deployments-server.sh
 
 # others
 .idea

@@ -17,6 +17,10 @@ helm package charts/mlflow
 ```
 
 ```bash
+helm package charts/mlflow-deployments-server
+```
+
+```bash
 helm repo index --url https://clemens33.github.io/mlflow .
 ```
 

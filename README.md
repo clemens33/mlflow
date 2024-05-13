@@ -205,3 +205,25 @@ data:
   MLFLOW_PORT: "5000"
   MLFLOW_ADDITIONAL_OPTIONS: "--gunicorn-opts '--worker-class gevent --threads 4 --timeout 300 --keep-alive 300 --log-level INFO'"
 ```
+
+## Deployment Server
+
+Create env file containing API keys and secrets
+
+```bash
+echo '#!/bin/bash
+
+# openai
+export OPENAI_API_KEY=yoursecretkey
+export OPENAI_API_KEY2=yoursecretkey
+
+# anthropic
+export ANTHROPIC_API_KEY=yoursecretkey' > .env-deployments-server.sh
+```
+
+Start mlflow deployments server with additional options
+
+```bash
+source .env-deployments-server.sh && \
+mlflow deployments start-server --config-path samples/config.yaml --workers 4
+```
