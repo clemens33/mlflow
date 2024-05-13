@@ -1,6 +1,11 @@
 *
 !.gitignore
+
 !mlflow*
 !mlflow/templates/*
 !mlflow/*
 !README.md
+
+!mlflow-deployments-server*
+!mlflow-deployments-server/*
+!mlflow-deployments-server/templates/*
