@@ -44,6 +44,8 @@ spec:
           env:
             - name: MLFLOW_WORKERS
               value: {{ .Values.workers | quote }}
+            - name: MLFLOW_PORT
+              value: {{ .Values.service.port | quote }}
           envFrom:
             - secretRef:
                 name: {{ .Values.secretApiKeys }}           
