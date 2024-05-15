@@ -21,3 +21,7 @@ black = "^24.3.0"
 
 [tool.poetry.group.genai.dependencies]
 mlflow = {extras = ["genai"], version = "^2.12.2"}
+
+[tool.poetry.group.samples.dependencies]
+langchain = "^0.1.20"
+
