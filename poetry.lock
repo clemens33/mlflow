@@ -230,23 +230,23 @@ msal-extensions = ">=0.3.0"
 
 [[package]]
 name = "azure-storage-blob"
-version = "12.19.1"
+version = "12.20.0"
 description = "Microsoft Azure Blob Storage Client Library for Python"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "azure-storage-blob-12.19.1.tar.gz", hash = "sha256:13e16ba42fc54ac2c7e8f976062173a5c82b9ec0594728e134aac372965a11b0"},
-    {file = "azure_storage_blob-12.19.1-py3-none-any.whl", hash = "sha256:c5530dc51c21c9564e4eb706cd499befca8819b10dd89716d3fc90d747556243"},
+    {file = "azure-storage-blob-12.20.0.tar.gz", hash = "sha256:eeb91256e41d4b5b9bad6a87fd0a8ade07dd58aa52344e2c8d2746e27a017d3b"},
+    {file = "azure_storage_blob-12.20.0-py3-none-any.whl", hash = "sha256:de6b3bf3a90e9341a6bcb96a2ebe981dffff993e9045818f6549afea827a52a9"},
 ]
 
 [package.dependencies]
-azure-core = ">=1.28.0,<2.0.0"
+azure-core = ">=1.28.0"
 cryptography = ">=2.1.4"
 isodate = ">=0.6.1"
-typing-extensions = ">=4.3.0"
+typing-extensions = ">=4.6.0"
 
 [package.extras]
-aio = ["azure-core[aio] (>=1.28.0,<2.0.0)"]
+aio = ["azure-core[aio] (>=1.28.0)"]
 
 [[package]]
 name = "black"
@@ -305,17 +305,17 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.34.100"
+version = "1.34.105"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "boto3-1.34.100-py3-none-any.whl", hash = "sha256:bbe2bb0dfcd92380da2a2fa2c2f586ba06c118b796380b2d0f3d0ebd103ec28d"},
-    {file = "boto3-1.34.100.tar.gz", hash = "sha256:016f6d66900bb1a835dea2063f1e91fc7057dbf7fb7df8add0706f0da9492631"},
+    {file = "boto3-1.34.105-py3-none-any.whl", hash = "sha256:b633e8fbf7145bdb995ce68a27d096bb89fd393185b0e773418d81cd78db5a03"},
+    {file = "boto3-1.34.105.tar.gz", hash = "sha256:f2c11635be0de7b7c06eb606ece1add125e02d6ed521592294a0a21af09af135"},
 ]
 
 [package.dependencies]
-botocore = ">=1.34.100,<1.35.0"
+botocore = ">=1.34.105,<1.35.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.10.0,<0.11.0"
 
@@ -324,13 +324,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.34.100"
+version = "1.34.105"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "botocore-1.34.100-py3-none-any.whl", hash = "sha256:ee516fb9e9e906d311f2a9921afaf79c594db239a5b4b626e89e6960401aad0b"},
-    {file = "botocore-1.34.100.tar.gz", hash = "sha256:513bea60c6531af8e1ae1fdb2947e3ef99712f39c58f4656b5efef9cb6f75a13"},
+    {file = "botocore-1.34.105-py3-none-any.whl", hash = "sha256:a459d060b541beecb50681e6e8a39313cca981e146a59ba7c5229d62f631a016"},
+    {file = "botocore-1.34.105.tar.gz", hash = "sha256:727d5d3e800ac8b705fca6e19b6fefa1e728a81d62a712df9bd32ed0117c740b"},
 ]
 
 [package.dependencies]
@@ -1757,13 +1757,13 @@ files = [
 
 [[package]]
 name = "mlflow"
-version = "2.12.1"
+version = "2.12.2"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mlflow-2.12.1-py3-none-any.whl", hash = "sha256:4c8f631df7ceea75c53464c976f3fef5bd0f80fc4ba5e871f3416d8c139a0312"},
-    {file = "mlflow-2.12.1.tar.gz", hash = "sha256:aa92aebb2379a9c5484cbe901cdf779d5408ac96a641e4b1f8a2d1ff974db7c9"},
+    {file = "mlflow-2.12.2-py3-none-any.whl", hash = "sha256:38dd04710fe64ee8229b7233b4d91db32c3ff887934c40d926246a566c886c0b"},
+    {file = "mlflow-2.12.2.tar.gz", hash = "sha256:d712f1af9d44f1eb9e1baee8ca64f7311e185b7572fc3c1e0a83a4c8ceff6aad"},
 ]
 
 [package.dependencies]
@@ -1778,7 +1778,7 @@ fastapi = {version = "<1", optional = true, markers = "extra == \"genai\""}
 Flask = "<4"
 gitpython = ">=3.1.9,<4"
 graphene = "<4"
-gunicorn = {version = "<22", markers = "platform_system != \"Windows\""}
+gunicorn = {version = "<23", markers = "platform_system != \"Windows\""}
 importlib-metadata = ">=3.7.0,<4.7.0 || >4.7.0,<8"
 Jinja2 = [
     {version = ">=2.11,<4", markers = "platform_system != \"Windows\""},
@@ -1789,7 +1789,7 @@ matplotlib = "<4"
 numpy = "<2"
 packaging = "<25"
 pandas = "<3"
-protobuf = ">=3.12.0,<6"
+protobuf = ">=3.12.0,<5"
 pyarrow = ">=4.0.0,<16"
 pydantic = {version = ">=1.0,<3", optional = true, markers = "extra == \"genai\""}
 pytz = "<2025"
@@ -3957,4 +3957,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "a918613a751ae95e6a2dcac2c6694b5d0def27eab8a3671b02131ff9df4f0cb7"
+content-hash = "5f1f5c4fa90c7d7558bec86c7f8bc721f4b25e0d730b08df102d48a9134d4050"
