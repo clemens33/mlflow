@@ -227,3 +227,20 @@ Start mlflow deployments server with additional options
 source .env-deployments-server.sh && \
 mlflow deployments start-server --config-path samples/config.yaml --workers 4
 ```
+
+### Samples
+
+Run samples after starting the deployments server
+
+```bash
+poetry run python samples/completions.py
+```
+
+```bash
+poetry run python samples/embeddings.py
+```
+
+```bash
+poetry run python samples/chat.py
+```
+
