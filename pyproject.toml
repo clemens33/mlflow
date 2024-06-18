@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ml-mlflow"
-version = "2.13.1-1"
+version = "2.14.0-1"
 description = "Container setup for mlflow for ml experiment tracking"
 authors = ["Clemens Kriechbaumer <clemens.kriechbaumer@gmail.com>"]
 readme = "README.md"
@@ -20,7 +20,7 @@ ruff = "^0.3.4"
 black = "^24.3.0"
 
 [tool.poetry.group.genai.dependencies]
-mlflow = {extras = ["genai"], version = "^2.13.2"}
+mlflow = {extras = ["genai"], version = "^2.14.0"}
 
 [tool.poetry.group.samples.dependencies]
 langchain = "^0.1.20"
