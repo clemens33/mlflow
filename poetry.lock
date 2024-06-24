@@ -213,13 +213,13 @@ aio = ["aiohttp (>=3.0)"]
 
 [[package]]
 name = "azure-identity"
-version = "1.16.1"
+version = "1.17.1"
 description = "Microsoft Azure Identity Library for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "azure-identity-1.16.1.tar.gz", hash = "sha256:6d93f04468f240d59246d8afde3091494a5040d4f141cad0f49fc0c399d0d91e"},
-    {file = "azure_identity-1.16.1-py3-none-any.whl", hash = "sha256:8fb07c25642cd4ac422559a8b50d3e77f73dcc2bbfaba419d06d6c9d7cff6726"},
+    {file = "azure-identity-1.17.1.tar.gz", hash = "sha256:32ecc67cc73f4bd0595e4f64b1ca65cd05186f4fe6f98ed2ae9f1aa32646efea"},
+    {file = "azure_identity-1.17.1-py3-none-any.whl", hash = "sha256:db8d59c183b680e763722bfe8ebc45930e6c57df510620985939f7f3191e0382"},
 ]
 
 [package.dependencies]
@@ -227,6 +227,7 @@ azure-core = ">=1.23.0"
 cryptography = ">=2.5"
 msal = ">=1.24.0"
 msal-extensions = ">=0.3.0"
+typing-extensions = ">=4.0.0"
 
 [[package]]
 name = "azure-storage-blob"
@@ -305,17 +306,17 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.34.128"
+version = "1.34.131"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "boto3-1.34.128-py3-none-any.whl", hash = "sha256:a048ff980a81cd652724a73bc496c519b336fabe19cc8bfc6c53b2ff6eb22c7b"},
-    {file = "boto3-1.34.128.tar.gz", hash = "sha256:43a6e99f53a8d34b3b4dbe424dbcc6b894350dc41a85b0af7c7bc24a7ec2cead"},
+    {file = "boto3-1.34.131-py3-none-any.whl", hash = "sha256:05e388cb937e82be70bfd7eb0c84cf8011ff35cf582a593873ac21675268683b"},
+    {file = "boto3-1.34.131.tar.gz", hash = "sha256:dab8f72a6c4e62b4fd70da09e08a6b2a65ea2115b27dd63737142005776ef216"},
 ]
 
 [package.dependencies]
-botocore = ">=1.34.128,<1.35.0"
+botocore = ">=1.34.131,<1.35.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.10.0,<0.11.0"
 
@@ -324,13 +325,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.34.128"
+version = "1.34.131"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "botocore-1.34.128-py3-none-any.whl", hash = "sha256:db67fda136c372ab3fa432580c819c89ba18d28a6152a4d2a7ea40d44082892e"},
-    {file = "botocore-1.34.128.tar.gz", hash = "sha256:8d8e03f7c8c080ecafda72036eb3b482d649f8417c90b5dca33b7c2c47adb0c9"},
+    {file = "botocore-1.34.131-py3-none-any.whl", hash = "sha256:13b011d7b206ce00727dcee26548fa3b550db9046d5a0e90ac25a6e6c8fde6ef"},
+    {file = "botocore-1.34.131.tar.gz", hash = "sha256:502ddafe1d627fcf1e4c007c86454e5dd011dba7c58bd8e8a5368a79f3e387dc"},
 ]
 
 [package.dependencies]
@@ -1947,13 +1948,13 @@ files = [
 
 [[package]]
 name = "mlflow"
-version = "2.14.0"
+version = "2.14.1"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mlflow-2.14.0-py3-none-any.whl", hash = "sha256:e4ef6b546af98edfa5e71b11915f72635bbbc833220bd663e0d86c13717176cf"},
-    {file = "mlflow-2.14.0.tar.gz", hash = "sha256:36de3105d841fd9ada117e6c82d0f2a7a0c09b7e45b20923b2ec4ddf441e015f"},
+    {file = "mlflow-2.14.1-py3-none-any.whl", hash = "sha256:0bda38f94468d69a169415b1d751078f1083ddb44646f50854d387bcb6d0b9ec"},
+    {file = "mlflow-2.14.1.tar.gz", hash = "sha256:1258ade134b9fbb15b1b0f22b0e9f98b5ff6f5f57575c10adfb255b9331fc587"},
 ]
 
 [package.dependencies]
@@ -4225,4 +4226,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "e578c33b8ac6e9c563e3a9483bc8c657c6dad7de1688ba60c3e86986bf181e8d"
+content-hash = "3a4c9ac6d43ed693f596c11b840baedf1033e6b1f10376e1dae7221f88417920"
