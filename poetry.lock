@@ -231,13 +231,13 @@ typing-extensions = ">=4.0.0"
 
 [[package]]
 name = "azure-storage-blob"
-version = "12.21.0"
+version = "12.22.0"
 description = "Microsoft Azure Blob Storage Client Library for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "azure-storage-blob-12.21.0.tar.gz", hash = "sha256:b9722725072f5b7373c0f4dd6d78fbae2bb37bffc5c3e01731ab8c750ee8dd7e"},
-    {file = "azure_storage_blob-12.21.0-py3-none-any.whl", hash = "sha256:f9ede187dd5a0ef296b583a7c1861c6938ddd6708d6e70f4203a163c2ab42d43"},
+    {file = "azure-storage-blob-12.22.0.tar.gz", hash = "sha256:b3804bb4fe8ab1c32771fa464053da772a682c2737b19da438a3f4e5e3b3736e"},
+    {file = "azure_storage_blob-12.22.0-py3-none-any.whl", hash = "sha256:bb7d2d824ce3f11f14a27ee7d9281289f7e072ac8311c52e3652672455b7d5e8"},
 ]
 
 [package.dependencies]
@@ -306,17 +306,17 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.34.153"
+version = "1.34.155"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "boto3-1.34.153-py3-none-any.whl", hash = "sha256:ff9af9206fb235605cb65922f9090fe60f78ea89b4adc463f8f6391b30a3df03"},
-    {file = "boto3-1.34.153.tar.gz", hash = "sha256:db9f2ac64582d847003a71720cd28dfffff61e2882e5d3db8e0c1fe1902ebb5b"},
+    {file = "boto3-1.34.155-py3-none-any.whl", hash = "sha256:445239ea2ba7f4084ddbd71f721c14d0a6d08e06f6ba51b5403a16b6544b3f1e"},
+    {file = "boto3-1.34.155.tar.gz", hash = "sha256:e8d2e128c74e84199edccdc3a6b4b1c6fb36d6fdb5688eb92931827f02c6fa5b"},
 ]
 
 [package.dependencies]
-botocore = ">=1.34.153,<1.35.0"
+botocore = ">=1.34.155,<1.35.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.10.0,<0.11.0"
 
@@ -325,13 +325,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.34.153"
+version = "1.34.155"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "botocore-1.34.153-py3-none-any.whl", hash = "sha256:9fc2ad40be8c103ab9bfcb48b97b117d299d0b3a542cdd30134ee2935bee827a"},
-    {file = "botocore-1.34.153.tar.gz", hash = "sha256:1634a00f996cfff67f0fd4d0ddc436bc3318b2202dfd82ad0bc11c7169694092"},
+    {file = "botocore-1.34.155-py3-none-any.whl", hash = "sha256:f2696c11bb0cad627d42512937befd2e3f966aedd15de00d90ee13cf7a16b328"},
+    {file = "botocore-1.34.155.tar.gz", hash = "sha256:3aa88abfef23909f68d3e6679a3d4b4bb3c6288a6cfbf9e253aa68dac8edad64"},
 ]
 
 [package.dependencies]
@@ -340,7 +340,7 @@ python-dateutil = ">=2.1,<3.0.0"
 urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""}
 
 [package.extras]
-crt = ["awscrt (==0.20.11)"]
+crt = ["awscrt (==0.21.2)"]
 
 [[package]]
 name = "cachetools"
@@ -1990,13 +1990,13 @@ files = [
 
 [[package]]
 name = "mlflow"
-version = "2.15.0"
+version = "2.15.1"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mlflow-2.15.0-py3-none-any.whl", hash = "sha256:1e2623fbfe7eb007efabef56bd9d31530de9407a1e4eda4cc6e61c6a00d3084b"},
-    {file = "mlflow-2.15.0.tar.gz", hash = "sha256:ad1dcfd73b5bc8167d698fb11b33f3cbb204276d1e3e80294aba15748a555b29"},
+    {file = "mlflow-2.15.1-py3-none-any.whl", hash = "sha256:f998b8ec9df9199284f52e79ea5dd0b2b76b327ed7f060531e44f1ecd197c5d9"},
+    {file = "mlflow-2.15.1.tar.gz", hash = "sha256:88da13f547cedce992d4614a4547f44bcdaf369e893179dd9a8bfa60338011bf"},
 ]
 
 [package.dependencies]
@@ -2014,7 +2014,7 @@ Jinja2 = [
 ]
 markdown = ">=3.3,<4"
 matplotlib = "<4"
-mlflow-skinny = "2.15.0"
+mlflow-skinny = "2.15.1"
 numpy = "<2"
 pandas = "<3"
 pyarrow = ">=4.0.0,<16"
@@ -2042,13 +2042,13 @@ xethub = ["mlflow-xethub"]
 
 [[package]]
 name = "mlflow-skinny"
-version = "2.15.0"
+version = "2.15.1"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mlflow_skinny-2.15.0-py3-none-any.whl", hash = "sha256:5dfd648c38ab6b7412bc30706e03f8bfac92aef5428269f640ded8d01baa93dd"},
-    {file = "mlflow_skinny-2.15.0.tar.gz", hash = "sha256:6e7b36023af9fb6e0ed506642c6497a4c9921df3e1595b7ac57aca4688441309"},
+    {file = "mlflow_skinny-2.15.1-py3-none-any.whl", hash = "sha256:a48c6f56106b104dc7221bad91af75a150b927d15210a41928cc8ecba086470a"},
+    {file = "mlflow_skinny-2.15.1.tar.gz", hash = "sha256:302f49757ffc8bdfc517b06f5252a02634203fec5e5ce95ad876a36af8403907"},
 ]
 
 [package.dependencies]
@@ -4333,4 +4333,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "ceba354e1867dae4a4e9b7f4d0ad7bb254ecc1f4e0957872f95661c4a2655835"
+content-hash = "f84aceae8c2ec6ea32b27a15a2832f1e8c6dd43205501f2c50e194b32218db14"
