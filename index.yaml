@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   mlflow:
   - apiVersion: v2
+    appVersion: 2.16.2-py3.11
+    created: "2024-09-18T11:59:50.335329807+02:00"
+    description: A MLflow Helm chart for Kubernetes
+    digest: d3f6b5b9f6c3a88b817180d12a52e8b84a04af946d617c598f54be7c7e4af056
+    name: mlflow
+    type: application
+    urls:
+    - https://clemens33.github.io/mlflow/mlflow-2.16.2-1.tgz
+    version: 2.16.2-1
+  - apiVersion: v2
     appVersion: 2.16.0-py3.11
-    created: "2024-09-03T16:52:15.526568946+02:00"
+    created: "2024-09-18T11:59:50.333873905+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 90c5c6da8f34619156a0c7217ecc9251a271ea0b6e8a1c6d072613e7e0646354
     name: mlflow
@@ -13,7 +23,7 @@ entries:
     version: 2.16.0-1
   - apiVersion: v2
     appVersion: 2.15.1-py3.11
-    created: "2024-09-03T16:52:15.526127544+02:00"
+    created: "2024-09-18T11:59:50.332549504+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 2a40e9be80589fe2fffc1328eb49551e65bc8fea50110ea3561b46ab6c5b6f5e
     name: mlflow
@@ -23,7 +33,7 @@ entries:
     version: 2.15.1-1
   - apiVersion: v2
     appVersion: 2.15.0-py3.11
-    created: "2024-09-03T16:52:15.525784542+02:00"
+    created: "2024-09-18T11:59:50.331215902+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: ed23e8cd6963406dbd2f6de7feed75f9c7a367b902c8c3e046fe75e20b1e1222
     name: mlflow
@@ -33,7 +43,7 @@ entries:
     version: 2.15.0-1
   - apiVersion: v2
     appVersion: 2.14.3-py3.11
-    created: "2024-09-03T16:52:15.52524774+02:00"
+    created: "2024-09-18T11:59:50.3298323+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 12cf57e9cf6d77e0aaacd42738b52e7d74232dae3d19044dd8bab95004c8a4f2
     name: mlflow
@@ -43,7 +53,7 @@ entries:
     version: 2.14.3-1
   - apiVersion: v2
     appVersion: 2.14.2-py3.11
-    created: "2024-09-03T16:52:15.524815038+02:00"
+    created: "2024-09-18T11:59:50.328710198+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: d065d2033d83b1c1e10ed39aa5774066b338a6f7f8e741ffa012afde7c3d84d9
     name: mlflow
@@ -53,7 +63,7 @@ entries:
     version: 2.14.2-1
   - apiVersion: v2
     appVersion: 2.14.1-py3.11
-    created: "2024-09-03T16:52:15.524466737+02:00"
+    created: "2024-09-18T11:59:50.324270392+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 6d5467e31cc43ce315471f28ffe35f69fc7f02a436acef1cbd01716d4beec52c
     name: mlflow
@@ -63,7 +73,7 @@ entries:
     version: 2.14.1-1
   - apiVersion: v2
     appVersion: 2.14.0-py3.11
-    created: "2024-09-03T16:52:15.523598533+02:00"
+    created: "2024-09-18T11:59:50.32293879+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 59404bc854594c709e5bd62773cadebf975976506887bff523494261aecc00e0
     name: mlflow
@@ -73,7 +83,7 @@ entries:
     version: 2.14.0-1
   - apiVersion: v2
     appVersion: 2.13.2-py3.11
-    created: "2024-09-03T16:52:15.52299753+02:00"
+    created: "2024-09-18T11:59:50.321289288+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: b470362dd8e4b28bf840f2395358a21adf9e73c6cb60d471a3a84273c8fc928c
     name: mlflow
@@ -83,7 +93,7 @@ entries:
     version: 2.13.2-1
   - apiVersion: v2
     appVersion: 2.13.1-py3.11
-    created: "2024-09-03T16:52:15.522610528+02:00"
+    created: "2024-09-18T11:59:50.320119587+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 001d24e17ea6a073791d9f2d1173655729f65cff573d0c8700e76a6520472198
     name: mlflow
@@ -93,7 +103,7 @@ entries:
     version: 2.13.1-1
   - apiVersion: v2
     appVersion: 2.13.0-py3.11
-    created: "2024-09-03T16:52:15.522243727+02:00"
+    created: "2024-09-18T11:59:50.318932585+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 3647ef23a8477e3fd8ddf03d43e4bd4c53205a7dd0cd1c806be85a4fbaa957d2
     name: mlflow
@@ -103,7 +113,7 @@ entries:
     version: 2.13.0-1
   - apiVersion: v2
     appVersion: 2.12.2-py3.11
-    created: "2024-09-03T16:52:15.521801925+02:00"
+    created: "2024-09-18T11:59:50.317555883+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: a5d1f1ad2f0d55f2fe2e4300d6def2c04794f603a406b674c2e57dbff155e5d0
     name: mlflow
@@ -113,7 +123,7 @@ entries:
     version: 2.12.2-1
   - apiVersion: v2
     appVersion: 2.12.1-py3.11
-    created: "2024-09-03T16:52:15.521422323+02:00"
+    created: "2024-09-18T11:59:50.316232481+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: a5ddc496c9138ba7f2588b9251ea997ab78dfca2ac5aa9f301dbc2fdee117cbe
     name: mlflow
@@ -123,7 +133,7 @@ entries:
     version: 2.12.1-1
   - apiVersion: v2
     appVersion: 2.11.3-py3.11
-    created: "2024-09-03T16:52:15.521089722+02:00"
+    created: "2024-09-18T11:59:50.31526208+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: edaafa97cb2297d9f642270fe761a79b2e777f40ed635bb7e8ff5d3eef5c702e
     name: mlflow
@@ -133,7 +143,7 @@ entries:
     version: 2.11.3-1
   - apiVersion: v2
     appVersion: 2.11.1-py3.11
-    created: "2024-09-03T16:52:15.52075142+02:00"
+    created: "2024-09-18T11:59:50.314264579+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 82fca9818bd94bd4cf8720569ab044bde945327c549238e950e8bc5e5e86955f
     name: mlflow
@@ -143,7 +153,7 @@ entries:
     version: 2.11.1-1
   - apiVersion: v2
     appVersion: 2.10.2-py3.11
-    created: "2024-09-03T16:52:15.520404719+02:00"
+    created: "2024-09-18T11:59:50.313307177+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: ea032119c5baed5c5a25cb837587c77a75117df88ca0050786f484c594b12558
     name: mlflow
@@ -153,7 +163,7 @@ entries:
     version: 2.10.2-1
   - apiVersion: v2
     appVersion: 2.9.10-py3.11
-    created: "2024-09-03T16:52:15.520064217+02:00"
+    created: "2024-09-18T11:59:50.312368976+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: a605370e73cf3f7ce7fee629182577c60607ad68864cfd7af317b882dd1057a3
     name: mlflow
@@ -163,7 +173,7 @@ entries:
     version: 2.10.0-1
   - apiVersion: v2
     appVersion: 2.9.10-py3.11
-    created: "2024-09-03T16:52:15.527209848+02:00"
+    created: "2024-09-18T11:59:50.33718741+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: d6249ddad0c7bc014d95f4904f209fd1bb4117493284271bc3f83cbbf33e5dc4
     name: mlflow
@@ -173,7 +183,7 @@ entries:
     version: 2.9.10-1
   - apiVersion: v2
     appVersion: 2.9.2-py3.10
-    created: "2024-09-03T16:52:15.528247253+02:00"
+    created: "2024-09-18T11:59:50.340062714+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 0d8ae33e78d1a0a63317a0dce3b6470247110e9b9f5c8910727d155deb161d22
     name: mlflow
@@ -183,7 +193,7 @@ entries:
     version: 2.9.2
   - apiVersion: v2
     appVersion: 2.9.2-py3.11
-    created: "2024-09-03T16:52:15.527878951+02:00"
+    created: "2024-09-18T11:59:50.339014212+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: d6480c65f9966f9b00135017a0e9575f194a3c5eb2b797424da6956c61e12114
     name: mlflow
@@ -193,7 +203,7 @@ entries:
     version: 2.9.2-3
   - apiVersion: v2
     appVersion: 2.9.2-py3.11
-    created: "2024-09-03T16:52:15.52752425+02:00"
+    created: "2024-09-18T11:59:50.338074911+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 5459f4c0dfa568b967f5d3547ff0d95e9008633d69952c396de53f343b651a98
     name: mlflow
@@ -203,7 +213,7 @@ entries:
     version: 2.9.2-2
   - apiVersion: v2
     appVersion: 2.9.1-py3.10
-    created: "2024-09-03T16:52:15.526880347+02:00"
+    created: "2024-09-18T11:59:50.336275809+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: 0205d53d5443db790cf4c47f26a2c22f19ecfa36cd3709dc779091c59c678612
     name: mlflow
@@ -213,7 +223,7 @@ entries:
     version: 2.9.1
   - apiVersion: v2
     appVersion: 2.7.1-py3.10
-    created: "2024-09-03T16:52:15.519700016+02:00"
+    created: "2024-09-18T11:59:50.311124574+02:00"
     description: A MLflow Helm chart for Kubernetes
     digest: d39a930aca7ce49d6bf38b1e4118d3a768209c7757df633f9ed6f80bb26e8909
     name: mlflow
@@ -223,8 +233,18 @@ entries:
     version: 0.1.0
   mlflow-deployments-server:
   - apiVersion: v2
+    appVersion: 2.16.2-deployments-server-py3.11
+    created: "2024-09-18T11:59:50.357972238+02:00"
+    description: A MLflow Helm chart for mlflow deployments server
+    digest: ae84286a91d18113a9cd997c8d477d8d75e9f3b5837e9a9ae167af93b4ae7fd4
+    name: mlflow-deployments-server
+    type: application
+    urls:
+    - https://clemens33.github.io/mlflow/mlflow-deployments-server-2.16.2-1.tgz
+    version: 2.16.2-1
+  - apiVersion: v2
     appVersion: 2.16.0-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.53443108+02:00"
+    created: "2024-09-18T11:59:50.356924037+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 6b0ca9ea96aec5c49b1baa28356b60592c3248378c158fa3f680ed1894a627e3
     name: mlflow-deployments-server
@@ -234,7 +254,7 @@ entries:
     version: 2.16.0-1
   - apiVersion: v2
     appVersion: 2.15.1-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.534074278+02:00"
+    created: "2024-09-18T11:59:50.355777135+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 945ccabe19fd0d96c26969d171544fba2fb09151f834f9626a929cf2a14d22a9
     name: mlflow-deployments-server
@@ -244,7 +264,7 @@ entries:
     version: 2.15.1-1
   - apiVersion: v2
     appVersion: 2.15-1-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.533709777+02:00"
+    created: "2024-09-18T11:59:50.354709934+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: d4a28dcb1189f6f0996eaf73ab8f71d14cd45319e4210371584aea68512cfb2e
     name: mlflow-deployments-server
@@ -254,7 +274,7 @@ entries:
     version: 2.15-1-1
   - apiVersion: v2
     appVersion: 2.15-0-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.533362975+02:00"
+    created: "2024-09-18T11:59:50.353686932+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 050a5790845c5159bef8c8c2fae9b98c186e21bad99782307f4a445d014f42e3
     name: mlflow-deployments-server
@@ -264,7 +284,7 @@ entries:
     version: 2.15-0-1
   - apiVersion: v2
     appVersion: 2.14.3-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.532992574+02:00"
+    created: "2024-09-18T11:59:50.352461431+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 8ed9388d6351b321f8b8d86a226b8973bed4789c4093c2b765632cd8c8d27e62
     name: mlflow-deployments-server
@@ -274,7 +294,7 @@ entries:
     version: 2.14.3-1
   - apiVersion: v2
     appVersion: 2.14.2-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.532641672+02:00"
+    created: "2024-09-18T11:59:50.351388429+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 1cc6de3cb3c9e0045ab84019639c8ecbc28fbc9e2e9be78d618bb3a803374bc9
     name: mlflow-deployments-server
@@ -284,7 +304,7 @@ entries:
     version: 2.14.2-1
   - apiVersion: v2
     appVersion: 2.14.1-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.53227847+02:00"
+    created: "2024-09-18T11:59:50.350304628+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 968d63e9d77b4824d9f6cb42599c5ee85e69724b50bb260d536304d29f9eae45
     name: mlflow-deployments-server
@@ -294,7 +314,7 @@ entries:
     version: 2.14.1-1
   - apiVersion: v2
     appVersion: 2.14.0-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.531902169+02:00"
+    created: "2024-09-18T11:59:50.349196526+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 8147bace14b718fe8717b3744a196b7c910eaf19931816f7aa8c8e814f65703e
     name: mlflow-deployments-server
@@ -304,7 +324,7 @@ entries:
     version: 2.14.0-1
   - apiVersion: v2
     appVersion: 2.13.2-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.531486267+02:00"
+    created: "2024-09-18T11:59:50.348174625+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 8369434685b8f473058be921d4e9c34f19d745b5ebc9ecc182d83c0731767935
     name: mlflow-deployments-server
@@ -314,7 +334,7 @@ entries:
     version: 2.13.2-1
   - apiVersion: v2
     appVersion: 2.13.1-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.530214761+02:00"
+    created: "2024-09-18T11:59:50.345255121+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 0c462ca744688559026ccd1e9c13fae0e393b287ae02a8e7d6a66e1a83aa49d1
     name: mlflow-deployments-server
@@ -324,7 +344,7 @@ entries:
     version: 2.13.1-1
   - apiVersion: v2
     appVersion: 2.13.0-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.52986066+02:00"
+    created: "2024-09-18T11:59:50.34425382+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 010395de6747010d782ca9d4e574903b732f9138ebe631532e8385d429bec983
     name: mlflow-deployments-server
@@ -334,7 +354,7 @@ entries:
     version: 2.13.0-1
   - apiVersion: v2
     appVersion: 2.12.2-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.529454958+02:00"
+    created: "2024-09-18T11:59:50.343335918+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 66828f7edd5c0fdb19933bd39252bd61278d85a4aead4f46556a34dcba2bc783
     name: mlflow-deployments-server
@@ -344,7 +364,7 @@ entries:
     version: 2.12.2-1
   - apiVersion: v2
     appVersion: 2.12.1-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.529052756+02:00"
+    created: "2024-09-18T11:59:50.342405317+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: d5a581a5d77e3c871765f8de5f197bc519206982538cefb7f72053a98ff979ed
     name: mlflow-deployments-server
@@ -354,7 +374,7 @@ entries:
     version: 2.12.1-2
   - apiVersion: v2
     appVersion: 2.12.1-deployments-server-py3.11
-    created: "2024-09-03T16:52:15.528608055+02:00"
+    created: "2024-09-18T11:59:50.341275216+02:00"
     description: A MLflow Helm chart for mlflow deployments server
     digest: 98e11e8a31e6353afd8cb2dafa837b8a2477a9194a80afe617f3d07fd520b89a
     name: mlflow-deployments-server
@@ -362,4 +382,4 @@ entries:
     urls:
     - https://clemens33.github.io/mlflow/mlflow-deployments-server-2.12.1-1.tgz
     version: 2.12.1-1
-generated: "2024-09-03T16:52:15.519264214+02:00"
+generated: "2024-09-18T11:59:50.309340472+02:00"
