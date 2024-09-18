@@ -49,11 +49,11 @@ Build and push to repository
 ## Run Container
 
 ```bash
-docker run -d --name mlflow -p 5000:5000 localhost/mlflow:2.16.0-py3.11
+docker run -d --name mlflow -p 5000:5000 localhost/mlflow:2.16.2-py3.11
 ```
 
 ```bash
-docker run -d --name mlflow -p 5000:5000 docker.io/clemens33/mlflow:2.16.0-py3.11
+docker run -d --name mlflow -p 5000:5000 docker.io/clemens33/mlflow:2.16.2-py3.11
 ```
 
 Persist mlruns and mlartifacts on host machine (not using any backend)
@@ -62,7 +62,7 @@ Persist mlruns and mlartifacts on host machine (not using any backend)
 if [ ! -d ./data ]; then mkdir ./data; fi && \
 docker run -d --name mlflow -p 5000:5000 \
 -v $(pwd)/data:/home/mlflow \
-localhost/mlflow:2.16.0-py3.11
+localhost/mlflow:2.16.2-py3.11
 ```
 
 Run container for [mlflow deployments server](https://mlflow.org/docs/latest/llms/deployments/index.html). First create a .env-deployments-server.sh file with your API keys which are set as environment variables within the container.
@@ -82,5 +82,5 @@ docker run --name mlflow-deployments-server \
 -p 5000:5000 \
 -v "$(pwd)/../samples/config.yaml:/home/mlflow/config.yaml" \
 --env-file "$(pwd)/.env-deployments-server.sh" \
-docker.io/clemens33/mlflow:2.16.0-deployments-server-py3.11 deployments-server
+docker.io/clemens33/mlflow:2.16.2-deployments-server-py3.11 deployments-server
 ```
