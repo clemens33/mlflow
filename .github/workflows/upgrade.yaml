@@ -1,0 +1,75 @@
+name: Upgrade Dependencies and Update Versions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    # Step 2: Set up Python and Poetry
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Poetry
+      uses: abatilo/actions-poetry@v2.2.2
+      with:
+        poetry-version: 'latest'
+
+    # Step 3: Configure Git
+    - name: Configure Git
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
+    # Step 4: Upgrade dependencies
+    - name: Upgrade dependencies with Poetry
+      run: |
+        poetry add mlflow@latest psycopg2-binary@latest boto3@latest prometheus-flask-exporter@latest azure-storage-blob@latest azure-identity@latest gevent@latest
+        poetry add mlflow[genai]@latest --group genai
+
+    # Step 5: Update version in pyproject.toml
+    - name: Update version in pyproject.toml
+      run: |
+        MLFLOW_VERSION=$(poetry show mlflow | awk '/^mlflow / {print $2}')
+        NEW_VERSION="${MLFLOW_VERSION}-1"
+        sed -i "s/^version = \".*\"/version = \"${NEW_VERSION}\"/" pyproject.toml
+
+    # Step 6: Update Docker image tags in docker/README.md
+    - name: Update Docker tags in README.md
+      run: |
+        MLFLOW_VERSION=$(poetry show mlflow | awk '/^mlflow / {print $2}')
+        PYTHON_VERSION=$(python -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')
+        sed -i "s/\(mlflow:\)[^ ]*/\1${MLFLOW_VERSION}-py${PYTHON_VERSION}/g" docker/README.md
+
+    # Step 7: Update versions in Chart.yaml files
+    - name: Update Chart.yaml versions
+      run: |
+        MLFLOW_VERSION=$(poetry show mlflow | awk '/^mlflow / {print $2}')
+        APP_VERSION="${MLFLOW_VERSION}-py${PYTHON_VERSION}"
+        CHART_VERSION="${MLFLOW_VERSION}-1"
+
+        # Update mlflow Chart.yaml
+        sed -i "s/^version: .*/version: ${CHART_VERSION}/" charts/mlflow/Chart.yaml
+        sed -i "s/^appVersion: .*/appVersion: \"${APP_VERSION}\"/" charts/mlflow/Chart.yaml
+
+        # Update mlflow-deployments-server Chart.yaml
+        APP_VERSION_DEPLOY="${MLFLOW_VERSION}-deployments-server-py${PYTHON_VERSION}"
+        sed -i "s/^version: .*/version: ${CHART_VERSION}/" charts/mlflow-deployments-server/Chart.yaml
+        sed -i "s/^appVersion: .*/appVersion: \"${APP_VERSION_DEPLOY}\"/" charts/mlflow-deployments-server/Chart.yaml
+
+    # Step 8: Commit and push changes
+    - name: Commit and push changes
+      run: |
+        git add pyproject.toml poetry.lock charts/mlflow/Chart.yaml charts/mlflow-deployments-server/Chart.yaml docker/README.md
+        git commit -m "Upgrade dependencies and update versions to mlflow ${MLFLOW_VERSION}"
+        git push origin master
