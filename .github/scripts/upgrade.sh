@@ -45,8 +45,12 @@ echo "Latest MLflow version: $LATEST_MLFLOW_VERSION"
 # compare versions
 if [[ $MLFLOW_VERSION = $LATEST_MLFLOW_VERSION ]]; then
     echo "MLflow is already up to date"
+
+    if is_github_actions; then
+      echo "mlflow_updated=false" >> $GITHUB_OUTPUT
+    fi
     
-    exit 1
+    exit 0
 fi
 
 echo "Upgrading to latest versions $LATEST_MLFLOW_VERSION"

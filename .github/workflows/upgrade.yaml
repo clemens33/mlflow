@@ -38,7 +38,7 @@ jobs:
 
     - name: Commit and push changes
       id: commit
-      if: ${{ steps.upgrade.outputs.success == 'true' }}
+      if: ${{ steps.upgrade.outputs.success == 'true' && steps.upgrade.outputs.mlflow_updated == 'true' }}
       run: |
         git add --all
         git commit -m "Upgrade dependencies and update versions to mlflow ${{ steps.upgrade.outputs.latest_mlflow_version }}"
