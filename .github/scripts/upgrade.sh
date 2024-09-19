@@ -56,8 +56,8 @@ fi
 echo "Upgrading to latest versions $LATEST_MLFLOW_VERSION"
 
 # upgrade dependencies
-poetry add mlflow@latest psycopg2-binary@latest boto3@latest prometheus-flask-exporter@latest azure-storage-blob@latest azure-identity@latest gevent@latest
-poetry add mlflow[genai]@latest --group genai
+poetry add mlflow@latest psycopg2-binary@latest boto3@latest prometheus-flask-exporter@latest azure-storage-blob@latest azure-identity@latest gevent@latest || exit 1
+poetry add mlflow[genai]@latest --group genai || exit 1
 
 # upgrade version in pyproject.toml
 PROJECT_VERSION=$(poetry version | awk '{print $2}')
