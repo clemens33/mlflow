@@ -2,6 +2,8 @@ name: upgrade-mlflow-build-images-and-charts
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * *'  # Runs at 01:00 UTC every da
 
 jobs:
   upgrade:
