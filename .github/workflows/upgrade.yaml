@@ -1,4 +1,4 @@
-name: Upgrade mlflow and release new docker images and charts
+name: upgrade-dependencies-and-mlflow-build-images-and-charts
 
 on:
   workflow_dispatch:
