@@ -1,80 +1,86 @@
-#!/bin/bash
+name: upgrade-mlflow-build-images-and-charts
 
-show_help() {
-  echo "Usage: ./upgrade.sh [OPTIONS]"
-  echo ""
-  echo "Options:"
-  echo "  -h, --help            Show this help message"
-  echo "  -s, --suffix          Specify the version suffix - e.g. 2.7.1-1, default set to 1"  
-}
+on:
+  workflow_dispatch:
 
-while [[ "$#" -gt 0 ]]; do
-  case $1 in
-    -h|--help) show_help; exit 0;;    
-    -s|--suffix) VERSION_SUFFIX="$2"; shift; shift ;;
-    *) echo "Unknown parameter: $1"; show_help; exit 1 ;;
-  esac
-done
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
 
-# set defaults
-VERSION_SUFFIX=${VERSION_SUFFIX:-"1"}
+    steps:
+    - name: Checkout repository      
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 1
 
-is_github_actions() {
-    [ -n "$GITHUB_ACTIONS" ]
-}
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
 
-if is_github_actions; then
-    echo "Running in GitHub Actions"
-    
-    cd "$GITHUB_WORKSPACE" || exit 1
-fi
+    - name: Install Poetry
+      uses: abatilo/actions-poetry@v2
+      with:
+        poetry-version: 'latest'
 
-echo "Current directory: $(pwd)"
+    - name: Configure Git      
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
 
-poetry export -f requirements.txt --output requirements.txt --without-hashes --with=genai || exit 1
-REQUIREMENTS_FILE="requirements.txt"
+    - name: Run upgrade script
+      id: upgrade
+      run: |
+        chmod +x .github/scripts/upgrade.sh
+        .github/scripts/upgrade.sh
 
-PYTHON_VERSION=$(grep -m1 'python_version >=' $REQUIREMENTS_FILE | awk -F'"' '{print $2}')
-MLFLOW_VERSION=$(grep -m1 'mlflow==' $REQUIREMENTS_FILE | awk -F'==' '{print $2}' | awk '{print $1}')
+    - name: Commit and push changes
+      id: commit
+      if: ${{ steps.upgrade.outputs.mlflow_updated == 'true' }}
+      run: |
+        git add --all
+        git commit -m "Upgraded mlflow to ${{ steps.upgrade.outputs.latest_mlflow_version }}"
+        git push origin ${GITHUB_REF#refs/heads/}
 
-LATEST_MLFLOW_VERSION=$(curl -s https://pypi.org/pypi/mlflow/json | grep -o '"version":"[^"]*"' | sed 's/"version":"//;s/"//')
+    - name: Set up Docker Buildx
+      if: ${{ steps.upgrade.outputs.mlflow_updated == 'true' }}
+      uses: docker/setup-buildx-action@v1
 
-echo "Current MLflow version: $MLFLOW_VERSION"
-echo "Latest MLflow version: $LATEST_MLFLOW_VERSION"
+    - name: Login to DockerHub
+      if: ${{ steps.upgrade.outputs.mlflow_updated == 'true' }}
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-# compare versions
-if [[ $MLFLOW_VERSION = $LATEST_MLFLOW_VERSION ]]; then
-    echo "MLflow is already up to date"
+    - name: Build and push Docker images
+      id: build_images
+      if: ${{ steps.upgrade.outputs.mlflow_updated == 'true' }}
+      run: |
+        chmod +x docker/build_image.sh
+        cd docker
+        ./build_image.sh --repository docker.io/clemens33/mlflow --push
+        ./build_image.sh --repository docker.io/clemens33/mlflow --genai --push
+        ./build_image.sh --repository docker.io/clemens33/mlflow --push --tag latest
+        ./build_image.sh --repository docker.io/clemens33/mlflow --genai --push --tag latest-deployments-server
+        
+    - name: Set up Helm
+      if: ${{ steps.upgrade.outputs.mlflow_updated == 'true' }}
+      uses: azure/setup-helm@v4.2.0
+      with:
+        version: 'latest'
 
-    if is_github_actions; then
-      echo "mlflow_updated=false" >> $GITHUB_OUTPUT
-    fi
-    
-    exit 0
-fi
-
-echo "Upgrading to latest versions $LATEST_MLFLOW_VERSION"
-
-# upgrade dependencies
-poetry add mlflow@latest psycopg2-binary@latest boto3@latest prometheus-flask-exporter@latest azure-storage-blob@latest azure-identity@latest gevent@latest
-poetry add mlflow[genai]@latest --group genai
-
-# upgrade version in pyproject.toml
-PROJECT_VERSION=$(poetry version | awk '{print $2}')
-NEW_PROJECT_VERSION=$(echo $LATEST_MLFLOW_VERSION-$VERSION_SUFFIX)
-poetry version $NEW_PROJECT_VERSION
-
-# upgrade mlflow tag version in docker/README.md from MLFLOW_VERSION to LATEST_MLFLOW_VERSION
-sed -i "s/$MLFLOW_VERSION/$LATEST_MLFLOW_VERSION/g" docker/README.md
-
-# upgrade mlflow tag in charts
-sed -i "s/$MLFLOW_VERSION/$LATEST_MLFLOW_VERSION/g" charts/mlflow/Chart.yaml
-sed -i "s/$MLFLOW_VERSION/$LATEST_MLFLOW_VERSION/g" charts/mlflow-deployments-server/Chart.yaml
-
-if is_github_actions; then
-    echo "latest_mlflow_version=${LATEST_MLFLOW_VERSION}" >> $GITHUB_OUTPUT
-fi
-
-exit 0
-
-
+    - name: Package Helm charts
+      id: package_charts
+      if: ${{ steps.upgrade.outputs.mlflow_updated == 'true' }}
+      run: |
+        git fetch origin charts
+        git checkout -b charts origin/charts
+        git merge ${GITHUB_REF#refs/heads/}
+        helm package charts/mlflow
+        helm package charts/mlflow-deployments-server
+        helm repo index --url https://clemens33.github.io/mlflow .
+        git add --all
+        git commit -m "Upgraded mlflow charts to ${{ steps.upgrade.outputs.latest_mlflow_version }}"
+        git push origin charts
