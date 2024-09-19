@@ -1,4 +1,4 @@
-name: upgrade-dependencies-and-mlflow-build-images-and-charts
+name: upgrade-mlflow-build-images-and-charts
 
 on:
   workflow_dispatch:
