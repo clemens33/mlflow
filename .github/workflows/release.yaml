@@ -1,0 +1,45 @@
+name: Upgrade mlflow and release new docker images and charts
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Checkout repository      
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 1
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Poetry
+      uses: abatilo/actions-poetry@v2.2.2
+      with:
+        poetry-version: 'latest'
+
+    - name: Configure Git      
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
+    - name: Run upgrade script
+      id: upgrade
+      run: |
+        chmod +x .github/scripts/upgrade.sh
+        .github/scripts/upgrade.sh
+
+    - name: Commit and push changes
+      id: commit
+      if: ${{ steps.upgrade.outputs.success == 'true' }}
+      run: |
+        git add --all
+        git commit -m "Upgrade dependencies and update versions to mlflow ${{ steps.upgrade.outputs.latest_mlflow_version }}"
+        git push origin ${GITHUB_REF#refs/heads/}
