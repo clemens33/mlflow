@@ -72,7 +72,8 @@ sed -i "s/$MLFLOW_VERSION/$LATEST_MLFLOW_VERSION/g" charts/mlflow/Chart.yaml
 sed -i "s/$MLFLOW_VERSION/$LATEST_MLFLOW_VERSION/g" charts/mlflow-deployments-server/Chart.yaml
 
 if is_github_actions; then
-    echo "latest_mlflow_version=${LATEST_MLFLOW_VERSION}" >> $GITHUB_OUTPUT
+    echo "latest_mlflow_version=${LATEST_MLFLOW_VERSION}" >> $GITHUB_OUTPUT    
+    echo "mlflow_updated=true" >> $GITHUB_OUTPUT
 fi
 
 exit 0
