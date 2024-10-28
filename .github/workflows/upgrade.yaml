@@ -79,7 +79,7 @@ jobs:
       run: |
         git fetch origin charts
         git checkout -b charts origin/charts
-        git merge ${GITHUB_REF#refs/heads/}
+        git merge ${GITHUB_REF#refs/heads/} --allow-unrelated-histories --no-edit
         helm package charts/mlflow
         helm package charts/mlflow-deployments-server
         helm repo index --url https://clemens33.github.io/mlflow .
