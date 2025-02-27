@@ -306,17 +306,17 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.36.20"
+version = "1.37.2"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "boto3-1.36.20-py3-none-any.whl", hash = "sha256:e132e31232ee107f1c187f566d96863a907433e5bdd8d8928effddd30a96242f"},
-    {file = "boto3-1.36.20.tar.gz", hash = "sha256:4a27ffc0543c2a429600542047f00c6a1e95270139d36d8cc636e9cc9a78b835"},
+    {file = "boto3-1.37.2-py3-none-any.whl", hash = "sha256:e58136d52d79425ce26c3c1578bf94d4b2e91ead55fed9f6950406ee9713e6af"},
+    {file = "boto3-1.37.2.tar.gz", hash = "sha256:d64491bd4142c2c6dfe44479bf89c4ab7fa8d00210c2aaa7361931e61898b608"},
 ]
 
 [package.dependencies]
-botocore = ">=1.36.20,<1.37.0"
+botocore = ">=1.37.2,<1.38.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.11.0,<0.12.0"
 
@@ -325,13 +325,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.36.20"
+version = "1.37.2"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "botocore-1.36.20-py3-none-any.whl", hash = "sha256:0110bf2208e4569659d0ccfca94baa4999501334397987b02712a94493cbf48b"},
-    {file = "botocore-1.36.20.tar.gz", hash = "sha256:3815a05518ff03a8dbc8d5a3c29b95889409a25ac87a282067f6e26fefb7c40a"},
+    {file = "botocore-1.37.2-py3-none-any.whl", hash = "sha256:5f59b966f3cd0c8055ef6f7c2600f7db5f8218071d992e5f95da3f9156d4370f"},
+    {file = "botocore-1.37.2.tar.gz", hash = "sha256:3f460f3c32cd6d747d5897a9cbde011bf1715abc7bf0a6ea6fdb0b812df63287"},
 ]
 
 [package.dependencies]
@@ -2006,13 +2006,13 @@ files = [
 
 [[package]]
 name = "mlflow"
-version = "2.20.2"
+version = "2.20.3"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "mlflow-2.20.2-py3-none-any.whl", hash = "sha256:6e4ec553abfb23368b1b6d21d200dcb63588acf9d1887615639af57f97fb618d"},
-    {file = "mlflow-2.20.2.tar.gz", hash = "sha256:99fc50e4cdc4fb3d205ca8c82d06051b88a4efe56df53c72bd427082798aba5b"},
+    {file = "mlflow-2.20.3-py3-none-any.whl", hash = "sha256:efafe5d4d17b53be1ae02c7d8708a5e4bbde4bd3aecd2bd68b64a3c4175e9dc6"},
+    {file = "mlflow-2.20.3.tar.gz", hash = "sha256:a7b1baf53d4f10160864961320df0c4cb74fb4f21c7522ef80a35290d03573bb"},
 ]
 
 [package.dependencies]
@@ -2030,10 +2030,10 @@ Jinja2 = [
 ]
 markdown = ">=3.3,<4"
 matplotlib = "<4"
-mlflow-skinny = "2.20.2"
+mlflow-skinny = "2.20.3"
 numpy = "<3"
 pandas = "<3"
-pyarrow = ">=4.0.0,<19"
+pyarrow = ">=4.0.0,<20"
 scikit-learn = "<2"
 scipy = "<2"
 slowapi = {version = ">=0.1.9,<1", optional = true, markers = "extra == \"genai\""}
@@ -2058,13 +2058,13 @@ xethub = ["mlflow-xethub"]
 
 [[package]]
 name = "mlflow-skinny"
-version = "2.20.2"
+version = "2.20.3"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "mlflow_skinny-2.20.2-py3-none-any.whl", hash = "sha256:b46400c84d97e2d33b9e5c4c9e12d30b30abc2ffd32a0b6a05d2ca9d0a8becde"},
-    {file = "mlflow_skinny-2.20.2.tar.gz", hash = "sha256:f2335fb3f18298ff81507451883012735e4276a90bf11ba116734cfe7996955e"},
+    {file = "mlflow_skinny-2.20.3-py3-none-any.whl", hash = "sha256:4cf9502bf8b7c4c971c90808560caeb2d57608354927f7b7b3150ca2c580c022"},
+    {file = "mlflow_skinny-2.20.3.tar.gz", hash = "sha256:4151f74500611f4c2ee1caf30b0108817b456654b42edbede2503dd6e845ed91"},
 ]
 
 [package.dependencies]
@@ -4330,4 +4330,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "f76819a2baee54f7d5a0e447251c57cdf3da9993fa9da96d13dcf19e04ef5feb"
+content-hash = "68a4993505428b4b03595a4c751acadcdc533ed3fdaf6351efc3a65e4adc3f07"
