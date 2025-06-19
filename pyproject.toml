@@ -1,15 +1,15 @@
 [tool.poetry]
 name = "ml-mlflow"
-version = "2.22.1-1"
+version = "3.1.0-1"
 description = "Container setup for mlflow for ml experiment tracking"
 authors = ["Clemens Kriechbaumer <clemens.kriechbaumer@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-mlflow = "^2.22.1"
+mlflow = "^3.1.0"
 psycopg2-binary = "^2.9.10"
-boto3 = "^1.38.32"
+boto3 = "^1.38.39"
 prometheus-flask-exporter = "^0.23.2"
 azure-storage-blob = "^12.25.1"
 azure-identity = "^1.23.0"
@@ -20,7 +20,7 @@ ruff = "^0.3.4"
 black = "^24.3.0"
 
 [tool.poetry.group.genai.dependencies]
-mlflow = {extras = ["genai"], version = "^2.22.1"}
+mlflow = {extras = ["genai"], version = "^3.1.0"}
 
 [tool.poetry.group.samples.dependencies]
 langchain = "^0.1.20"
