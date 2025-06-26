@@ -306,17 +306,17 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.38.39"
+version = "1.38.44"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "boto3-1.38.39-py3-none-any.whl", hash = "sha256:6472f7f3f13783e9c9c5d0042173b32a0e7000073d0a57a725d38cd157ce3332"},
-    {file = "boto3-1.38.39.tar.gz", hash = "sha256:22cca12cfe1b24670de53e3b8f4c69bdf34a2bd3e3363f72393b6b03bb0d78bc"},
+    {file = "boto3-1.38.44-py3-none-any.whl", hash = "sha256:73fcb2f8c7bec25d17e3f1940a1776c515b458b3da77ad3a31a177479591028b"},
+    {file = "boto3-1.38.44.tar.gz", hash = "sha256:af1769dfb2a8a30eec24d0b74a8c17db2accc5a6224d4fab39dd36df6590f741"},
 ]
 
 [package.dependencies]
-botocore = ">=1.38.39,<1.39.0"
+botocore = ">=1.38.44,<1.39.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.13.0,<0.14.0"
 
@@ -325,13 +325,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.38.39"
+version = "1.38.44"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "botocore-1.38.39-py3-none-any.whl", hash = "sha256:ee3aa03af1dabed4f3710cd64f6d9d488281eee720710bf1cf9f2b2fd30025ae"},
-    {file = "botocore-1.38.39.tar.gz", hash = "sha256:2305f688e9328af473a504197584112f228513e06412038d83205ce8d1456f40"},
+    {file = "botocore-1.38.44-py3-none-any.whl", hash = "sha256:d0171ac6ec0bfdf86083b41c801f212e2b2d5756a61ea1d45af2051f21dbf886"},
+    {file = "botocore-1.38.44.tar.gz", hash = "sha256:8d54795a084204e4cd7885d9307e4bfaccc96411dc0384f6ba240b515c45bf54"},
 ]
 
 [package.dependencies]
@@ -1973,13 +1973,13 @@ files = [
 
 [[package]]
 name = "mlflow"
-version = "3.1.0"
+version = "3.1.1"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "mlflow-3.1.0-py3-none-any.whl", hash = "sha256:4101d027b548afacc263b76617098454ce5281e23021bc44f11edc684495e63d"},
-    {file = "mlflow-3.1.0.tar.gz", hash = "sha256:de0b90aa058b532738081deec791bb2fca35abcca0fd9358da75fefe0a6170f4"},
+    {file = "mlflow-3.1.1-py3-none-any.whl", hash = "sha256:16853335292217fde203a645fd50f38d5567ce7818587ed5236040418918872e"},
+    {file = "mlflow-3.1.1.tar.gz", hash = "sha256:ee98fe929d61625b72ae5010fbf12a7c6d15527790397827191fd6e8246c33e5"},
 ]
 
 [package.dependencies]
@@ -1992,7 +1992,7 @@ Flask = "<4"
 graphene = "<4"
 gunicorn = {version = "<24", markers = "platform_system != \"Windows\""}
 matplotlib = "<4"
-mlflow-skinny = "3.1.0"
+mlflow-skinny = "3.1.1"
 numpy = "<3"
 pandas = "<3"
 pyarrow = ">=4.0.0,<21"
@@ -2008,7 +2008,7 @@ watchfiles = {version = "<2", optional = true, markers = "extra == \"genai\""}
 [package.extras]
 aliyun-oss = ["aliyunstoreplugin"]
 auth = ["Flask-WTF (<2)"]
-databricks = ["azure-storage-file-datalake (>12)", "boto3 (>1)", "botocore", "databricks-agents (>=1.0.0rc3,<2.0)", "google-cloud-storage (>=1.30.0)"]
+databricks = ["azure-storage-file-datalake (>12)", "boto3 (>1)", "botocore", "databricks-agents (>=1.0.0,<2.0)", "google-cloud-storage (>=1.30.0)"]
 extras = ["azureml-core (>=1.2.0)", "boto3", "botocore", "google-cloud-storage (>=1.30.0)", "kubernetes", "prometheus-flask-exporter", "pyarrow", "pysftp", "requests-auth-aws-sigv4", "virtualenv"]
 gateway = ["aiohttp (<4)", "boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 genai = ["aiohttp (<4)", "boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
@@ -2020,13 +2020,13 @@ xethub = ["mlflow-xethub"]
 
 [[package]]
 name = "mlflow-skinny"
-version = "3.1.0"
+version = "3.1.1"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "mlflow_skinny-3.1.0-py3-none-any.whl", hash = "sha256:d6221d55df49bfb9546594bad82a9608c016e71267fd9ad7bfac17ea299f327e"},
-    {file = "mlflow_skinny-3.1.0.tar.gz", hash = "sha256:20c58f89d75b2f21f09b5584ca79c715e328e35e9472b644c4ec3c80e501b2ad"},
+    {file = "mlflow_skinny-3.1.1-py3-none-any.whl", hash = "sha256:73b1be5d0ef3099c2d0e5ec3ca7fd0b85d4a6def7d7ab35feda9f06bf8bf7049"},
+    {file = "mlflow_skinny-3.1.1.tar.gz", hash = "sha256:9c2ea510eef6c115c7241305b65f7090d7fdc02399de2a6e8ddae5f285bb7a99"},
 ]
 
 [package.dependencies]
@@ -2051,7 +2051,7 @@ uvicorn = "<1"
 [package.extras]
 aliyun-oss = ["aliyunstoreplugin"]
 auth = ["Flask-WTF (<2)"]
-databricks = ["azure-storage-file-datalake (>12)", "boto3 (>1)", "botocore", "databricks-agents (>=1.0.0rc3,<2.0)", "google-cloud-storage (>=1.30.0)"]
+databricks = ["azure-storage-file-datalake (>12)", "boto3 (>1)", "botocore", "databricks-agents (>=1.0.0,<2.0)", "google-cloud-storage (>=1.30.0)"]
 extras = ["azureml-core (>=1.2.0)", "boto3", "botocore", "google-cloud-storage (>=1.30.0)", "kubernetes", "prometheus-flask-exporter", "pyarrow", "pysftp", "requests-auth-aws-sigv4", "virtualenv"]
 gateway = ["aiohttp (<4)", "boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 genai = ["aiohttp (<4)", "boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
@@ -4294,4 +4294,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "ccdcd65155da61389749343015307be50532afd545e182f2915c862fc65133fe"
+content-hash = "76d1b4cf00f49fa32054529b016adc9b3a156b8b4a73823a17f008475b8cf06b"
