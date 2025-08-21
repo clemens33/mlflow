@@ -306,17 +306,17 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.40.13"
+version = "1.40.14"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "boto3-1.40.13-py3-none-any.whl", hash = "sha256:b43110b6ad30e683fab769b4c5659b6b0606afa535627de831f7181306009d5e"},
-    {file = "boto3-1.40.13.tar.gz", hash = "sha256:7ff74221328868c5f7dcd7a9b959e7b882c1ab1b04cc9df868ea70de7d8bd004"},
+    {file = "boto3-1.40.14-py3-none-any.whl", hash = "sha256:ab5798a03582d09c0de132d080c9aee53d5647b6461261a5b7621170ec80d92b"},
+    {file = "boto3-1.40.14.tar.gz", hash = "sha256:d1d9998fc2b9619fc796c859d263ac81793d783e79331be62931b353dd1b68b9"},
 ]
 
 [package.dependencies]
-botocore = ">=1.40.13,<1.41.0"
+botocore = ">=1.40.14,<1.41.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.13.0,<0.14.0"
 
@@ -325,13 +325,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.13"
+version = "1.40.14"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "botocore-1.40.13-py3-none-any.whl", hash = "sha256:5bf7334d6a0a87a907d607b115710bede2440376cefa8c33b0d99571fb226d87"},
-    {file = "botocore-1.40.13.tar.gz", hash = "sha256:d7003526a9169e8ab3566db2227cf0b85d9e689e9ff97f2803c629a8e4624fb5"},
+    {file = "botocore-1.40.14-py3-none-any.whl", hash = "sha256:06c852be83543c8d45e18a530abcad31659db8b16bcb66fd371c930d38017e7c"},
+    {file = "botocore-1.40.14.tar.gz", hash = "sha256:1810494c8c4190f20f9e17f2da4f7ee91eda863f429c6d690ea17ec41a8f83c4"},
 ]
 
 [package.dependencies]
@@ -1978,13 +1978,13 @@ files = [
 
 [[package]]
 name = "mlflow"
-version = "3.3.0"
+version = "3.3.1"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "mlflow-3.3.0-py3-none-any.whl", hash = "sha256:f05786d5fcb45cf6fa21ea3c59116b58e47c2d3566e79651de229c29db70819c"},
-    {file = "mlflow-3.3.0.tar.gz", hash = "sha256:7699114135b1742c19565d531ece9aac4685cb5445660f46457d811f303f5b6e"},
+    {file = "mlflow-3.3.1-py3-none-any.whl", hash = "sha256:a78a032cf5392a608bba1a6ee59c9bbd6b1d29b2ea2598e4e2ce7a20ccaf1eea"},
+    {file = "mlflow-3.3.1.tar.gz", hash = "sha256:05159afb08e898f11b0f71f29d5b27e5e5248f0099c449567dcb8a52e9b07463"},
 ]
 
 [package.dependencies]
@@ -1998,8 +1998,8 @@ Flask = "<4"
 graphene = "<4"
 gunicorn = {version = "<24", markers = "platform_system != \"Windows\""}
 matplotlib = "<4"
-mlflow-skinny = "3.3.0"
-mlflow-tracing = "3.3.0"
+mlflow-skinny = "3.3.1"
+mlflow-tracing = "3.3.1"
 numpy = "<3"
 pandas = "<3"
 pyarrow = ">=4.0.0,<22"
@@ -2026,13 +2026,13 @@ sqlserver = ["mlflow-dbstore"]
 
 [[package]]
 name = "mlflow-skinny"
-version = "3.3.0"
+version = "3.3.1"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "mlflow_skinny-3.3.0-py3-none-any.whl", hash = "sha256:d059b4c520ef9b71063a57007e03f675b0a59fbeefac2bce2bc91910f522a0eb"},
-    {file = "mlflow_skinny-3.3.0.tar.gz", hash = "sha256:a7e8e811cd5cb6b69769f3cd88fe5e82da5de7d88995b2e2bc0689b4b1610d22"},
+    {file = "mlflow_skinny-3.3.1-py3-none-any.whl", hash = "sha256:0955568f6a97db9456314439fcf8392c9f9f24c8085948f45d2db933a7520eed"},
+    {file = "mlflow_skinny-3.3.1.tar.gz", hash = "sha256:1a95be40086a3d0f109ae918b214df3230199793afe10a42ddc7dc2176f8656c"},
 ]
 
 [package.dependencies]
@@ -2068,13 +2068,13 @@ sqlserver = ["mlflow-dbstore"]
 
 [[package]]
 name = "mlflow-tracing"
-version = "3.3.0"
+version = "3.3.1"
 description = "MLflow Tracing SDK is an open-source, lightweight Python package that only includes the minimum set of dependencies and functionality to instrument your code/models/agents with MLflow Tracing."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "mlflow_tracing-3.3.0-py3-none-any.whl", hash = "sha256:44057f267018bc224184ee034d76834d4c1cc66f04f38a024a2d90216c766838"},
-    {file = "mlflow_tracing-3.3.0.tar.gz", hash = "sha256:a64dd2a344b47ef1fa01fce1365c325678c78bab77a491506d72ecd68876baf2"},
+    {file = "mlflow_tracing-3.3.1-py3-none-any.whl", hash = "sha256:ab92e6287fdaac2940528b520f1728a300d02b5858052f0c5831df2b1bb4fbbc"},
+    {file = "mlflow_tracing-3.3.1.tar.gz", hash = "sha256:ba2973300836b8d656ec516f64145130bbe07332e43429765507234db8a8f632"},
 ]
 
 [package.dependencies]
@@ -4319,4 +4319,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "04459f5a8c51ffd198db13f1f2e448521079e4b2f517b8df2847098203c8b6f3"
+content-hash = "7e011d970314c87fed8bccdbc0819225f6567c70af0ad7c3b78542236869043a"
