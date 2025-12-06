@@ -305,32 +305,32 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.40.69"
+version = "1.42.4"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "boto3-1.40.69-py3-none-any.whl", hash = "sha256:c3f710a1990c4be1c0db43b938743d4e404c7f1f06d5f1fa0c8e9b1cea4290b2"},
-    {file = "boto3-1.40.69.tar.gz", hash = "sha256:5273f6bac347331a87db809dff97d8736c50c3be19f2bb36ad08c5131c408976"},
+    {file = "boto3-1.42.4-py3-none-any.whl", hash = "sha256:0f4089e230d55f981d67376e48cefd41c3d58c7f694480f13288e6ff7b1fefbc"},
+    {file = "boto3-1.42.4.tar.gz", hash = "sha256:65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"},
 ]
 
 [package.dependencies]
-botocore = ">=1.40.69,<1.41.0"
+botocore = ">=1.42.4,<1.43.0"
 jmespath = ">=0.7.1,<2.0.0"
-s3transfer = ">=0.14.0,<0.15.0"
+s3transfer = ">=0.16.0,<0.17.0"
 
 [package.extras]
 crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.69"
+version = "1.42.4"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "botocore-1.40.69-py3-none-any.whl", hash = "sha256:5d810efeb9e18f91f32690642fa81ae60e482eefeea0d35ec72da2e3d924c1a5"},
-    {file = "botocore-1.40.69.tar.gz", hash = "sha256:df310ddc4d2de5543ba3df4e4b5f9907a2951896d63a9fbae115c26ca0976951"},
+    {file = "botocore-1.42.4-py3-none-any.whl", hash = "sha256:c3b091fd33809f187824b6434e518b889514ded5164cb379358367c18e8b0d7d"},
+    {file = "botocore-1.42.4.tar.gz", hash = "sha256:d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"},
 ]
 
 [package.dependencies]
@@ -339,7 +339,7 @@ python-dateutil = ">=2.1,<3.0.0"
 urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""}
 
 [package.extras]
-crt = ["awscrt (==0.27.6)"]
+crt = ["awscrt (==0.29.2)"]
 
 [[package]]
 name = "cachetools"
@@ -2011,13 +2011,13 @@ files = [
 
 [[package]]
 name = "mlflow"
-version = "3.6.0"
+version = "3.7.0"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "mlflow-3.6.0-py3-none-any.whl", hash = "sha256:04d1691facd412be8e61b963fad859286cfeb2dbcafaea294e6aa0b83a15fc04"},
-    {file = "mlflow-3.6.0.tar.gz", hash = "sha256:d945d259b5c6b551a9f26846db8979fd84c78114a027b77ada3298f821a9b0e1"},
+    {file = "mlflow-3.7.0-py3-none-any.whl", hash = "sha256:da7dd2744c4b1ae8d7986ef36edc35d5250d742f47cfb2637070366ed9404092"},
+    {file = "mlflow-3.7.0.tar.gz", hash = "sha256:391951abe33596497faaad2c8baf902c745472111b06e72130d5b44756bae74a"},
 ]
 
 [package.dependencies]
@@ -2033,8 +2033,8 @@ graphene = "<4"
 gunicorn = {version = "<24", markers = "platform_system != \"Windows\""}
 huey = ">=2.5.0,<3"
 matplotlib = "<4"
-mlflow-skinny = "3.6.0"
-mlflow-tracing = "3.6.0"
+mlflow-skinny = "3.7.0"
+mlflow-tracing = "3.7.0"
 numpy = "<3"
 pandas = "<3"
 pyarrow = ">=4.0.0,<23"
@@ -2055,20 +2055,20 @@ extras = ["azureml-core (>=1.2.0)", "boto3", "botocore", "google-cloud-storage (
 gateway = ["aiohttp (<4)", "boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 genai = ["aiohttp (<4)", "boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 jfrog = ["mlflow-jfrog-plugin"]
-langchain = ["langchain (>=0.3.7,<=0.3.27)"]
-mcp = ["fastmcp (>=2.0.0,<3)"]
+langchain = ["langchain (>=0.3.9,<=1.1.0)"]
+mcp = ["click (!=8.3.0)", "fastmcp (>=2.0.0,<3)"]
 mlserver = ["mlserver (>=1.2.0,!=1.3.1,<2.0.0)", "mlserver-mlflow (>=1.2.0,!=1.3.1,<2.0.0)"]
 sqlserver = ["mlflow-dbstore"]
 
 [[package]]
 name = "mlflow-skinny"
-version = "3.6.0"
+version = "3.7.0"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "mlflow_skinny-3.6.0-py3-none-any.whl", hash = "sha256:c83b34fce592acb2cc6bddcb507587a6d9ef3f590d9e7a8658c85e0980596d78"},
-    {file = "mlflow_skinny-3.6.0.tar.gz", hash = "sha256:cc04706b5b6faace9faf95302a6e04119485e1bfe98ddc9b85b81984e80944b6"},
+    {file = "mlflow_skinny-3.7.0-py3-none-any.whl", hash = "sha256:0fb37de3c8e1787dfcf1b04919b43328c133d9045ca54dfd3f359860670e5f0e"},
+    {file = "mlflow_skinny-3.7.0.tar.gz", hash = "sha256:5f04343ec2101fa39f798351b4f5c0e6664dffd0cd76ad8a68a087b1a8a5e702"},
 ]
 
 [package.dependencies]
@@ -2100,20 +2100,20 @@ extras = ["azureml-core (>=1.2.0)", "boto3", "botocore", "google-cloud-storage (
 gateway = ["aiohttp (<4)", "boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 genai = ["aiohttp (<4)", "boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 jfrog = ["mlflow-jfrog-plugin"]
-langchain = ["langchain (>=0.3.7,<=0.3.27)"]
-mcp = ["fastmcp (>=2.0.0,<3)"]
+langchain = ["langchain (>=0.3.9,<=1.1.0)"]
+mcp = ["click (!=8.3.0)", "fastmcp (>=2.0.0,<3)"]
 mlserver = ["mlserver (>=1.2.0,!=1.3.1,<2.0.0)", "mlserver-mlflow (>=1.2.0,!=1.3.1,<2.0.0)"]
 sqlserver = ["mlflow-dbstore"]
 
 [[package]]
 name = "mlflow-tracing"
-version = "3.6.0"
+version = "3.7.0"
 description = "MLflow Tracing SDK is an open-source, lightweight Python package that only includes the minimum set of dependencies and functionality to instrument your code/models/agents with MLflow Tracing."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "mlflow_tracing-3.6.0-py3-none-any.whl", hash = "sha256:a68ff03ba5129c67dc98e6871e0d5ef512dd3ee66d01e1c1a0c946c08a6d4755"},
-    {file = "mlflow_tracing-3.6.0.tar.gz", hash = "sha256:ccff80b3aad6caa18233c98ba69922a91a6f914e0a13d12e1977af7523523d4c"},
+    {file = "mlflow_tracing-3.7.0-py3-none-any.whl", hash = "sha256:3bbe534bae95e5162a086df3f4722952ac1b7950f31907fb6ddd84affdac5c9f"},
+    {file = "mlflow_tracing-3.7.0.tar.gz", hash = "sha256:d5404f737441d86149e27ab9e758db26b141ec4fbb35572e2e27b608df87ab6b"},
 ]
 
 [package.dependencies]
@@ -3334,13 +3334,13 @@ files = [
 
 [[package]]
 name = "s3transfer"
-version = "0.14.0"
+version = "0.16.0"
 description = "An Amazon S3 Transfer Manager"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "s3transfer-0.14.0-py3-none-any.whl", hash = "sha256:ea3b790c7077558ed1f02a3072fb3cb992bbbd253392f4b6e9e8976941c7d456"},
-    {file = "s3transfer-0.14.0.tar.gz", hash = "sha256:eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125"},
+    {file = "s3transfer-0.16.0-py3-none-any.whl", hash = "sha256:18e25d66fed509e3868dc1572b3f427ff947dd2c56f844a5bf09481ad3f3b2fe"},
+    {file = "s3transfer-0.16.0.tar.gz", hash = "sha256:8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"},
 ]
 
 [package.dependencies]
@@ -4389,4 +4389,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "ea7362fa7778d35b6424ac2b4728771c7892c391c7c77b9fd6686537c0a7f36d"
+content-hash = "f1c772ca5530ae6160a839eae07934cf7b4f22141e68618b96e0e76cad9bb5ed"
