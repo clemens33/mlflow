@@ -193,7 +193,7 @@ poetry run mlflow server \
 
 ## [Helm](charts/README.md)
 
-For running mlflow as tracking service it is highly recommended to use gunicorn with gevent workers (non blocking io optimized). The following describes a corresponding config map
+Starting from MLflow 3.5+, the server defaults to uvicorn and includes security middleware for DNS rebinding and CORS protection. When running behind a reverse proxy, configure `--allowed-hosts` and `--cors-allowed-origins` accordingly. The following describes a corresponding config map for Kubernetes deployments:
 
 ```yaml
 apiVersion: v1
@@ -203,8 +203,10 @@ metadata:
 data:
   MLFLOW_HOST: "0.0.0.0"
   MLFLOW_PORT: "5000"
-  MLFLOW_ADDITIONAL_OPTIONS: "--gunicorn-opts '--worker-class gevent --threads 4 --timeout 300 --keep-alive 300 --log-level INFO'"
+  MLFLOW_ADDITIONAL_OPTIONS: "--allowed-hosts mlflow.example.com --cors-allowed-origins https://mlflow.example.com"
 ```
+
+Note: `--allowed-hosts` and `--cors-allowed-origins` are only supported with the default uvicorn server and cannot be used together with `--gunicorn-opts`.
 
 ## Deployment Server
 
