@@ -6,7 +6,7 @@ authors = ["Clemens Kriechbaumer <clemens.kriechbaumer@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.15"
 mlflow = "^3.9.0"
 psycopg2-binary = "^2.9.11"
 boto3 = "^1.42.38"
