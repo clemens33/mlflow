@@ -2,5 +2,5 @@ apiVersion: v2
 name: mlflow-deployments-server
 description: A MLflow Helm chart for mlflow deployments server
 type: application
-version: 3.9.0-1
-appVersion: "3.9.0-deployments-server-py3.11"
+version: 3.10.0-1
+appVersion: "3.10.0-deployments-server-py3.11"
