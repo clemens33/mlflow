@@ -212,31 +212,31 @@ tracing = ["opentelemetry-api (>=1.26,<2.0)"]
 
 [[package]]
 name = "azure-identity"
-version = "1.25.3"
+version = "1.26.0"
 description = "Microsoft Azure Identity Library for Python"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "azure_identity-1.25.3-py3-none-any.whl", hash = "sha256:f4d0b956a8146f30333e071374171f3cfa7bdb8073adb8c3814b65567aa7447c"},
-    {file = "azure_identity-1.25.3.tar.gz", hash = "sha256:ab23c0d63015f50b630ef6c6cf395e7262f439ce06e5d07a64e874c724f8d9e6"},
+    {file = "azure_identity-1.26.0-py3-none-any.whl", hash = "sha256:3c60d9682b3ac01507388d474cb5a5ffbe54152a96b6cdcaa7013da9315cf186"},
+    {file = "azure_identity-1.26.0.tar.gz", hash = "sha256:61b4538b87df10d2d6d44b77cd5ea28a8929fd4929d58b45bf3f230f7daba02e"},
 ]
 
 [package.dependencies]
 azure-core = ">=1.31.0"
 cryptography = ">=2.5"
-msal = ">=1.35.1"
+msal = ">=1.39.0"
 msal-extensions = ">=1.2.0"
 typing-extensions = ">=4.0.0"
 
 [[package]]
 name = "azure-storage-blob"
-version = "12.30.2"
+version = "12.31.0"
 description = "Microsoft Azure Blob Storage Client Library for Python"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "azure_storage_blob-12.30.2-py3-none-any.whl", hash = "sha256:057d1f78c7cf27a0b7ec54ffdbe2436c63474be0a0e25cc55c9ce6addcd13bae"},
-    {file = "azure_storage_blob-12.30.2.tar.gz", hash = "sha256:77f8e38c319d0b0efe9444c29179277157c5c2e5ddc40ec39f1f82faacebdcb4"},
+    {file = "azure_storage_blob-12.31.0-py3-none-any.whl", hash = "sha256:0c0cb601d3462491d09ea96023cd791bb9dd4b173bf950daf3cff34ff47ba5b5"},
+    {file = "azure_storage_blob-12.31.0.tar.gz", hash = "sha256:997b393cfcbdc4b186d5911790d91f80387f7edc12c4d73eab963a2d26e5b2a9"},
 ]
 
 [package.dependencies]
@@ -247,6 +247,7 @@ typing-extensions = ">=4.6.0"
 
 [package.extras]
 aio = ["azure-core[aio] (>=1.37.0)"]
+ext-checksums = ["azure-storage-extensions (>=0.1.0,<1.0.0)"]
 
 [[package]]
 name = "black"
@@ -305,17 +306,17 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.43.96"
+version = "1.43.108"
 description = "The AWS SDK for Python (Boto3)"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "boto3-1.43.96-py3-none-any.whl", hash = "sha256:73f0386fcc412ce5ad3ae4245e2a405e69e889988dd77e91b82e3b66404f3fee"},
-    {file = "boto3-1.43.96.tar.gz", hash = "sha256:30fb2b5467ef5175ed48f43c06c435eec5da841594a5d7653c4da679df0740fc"},
+    {file = "boto3-1.43.108-py3-none-any.whl", hash = "sha256:19e9da95ef0c494e27052049a42137550e66730509bb613e76eaa30ddf9a7170"},
+    {file = "boto3-1.43.108.tar.gz", hash = "sha256:03341f089158368acf83e921aca98b706095322ca52bc4c039a616940aa5ad41"},
 ]
 
 [package.dependencies]
-botocore = ">=1.43.96,<1.44.0"
+botocore = ">=1.43.108,<1.44.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.19.0,<0.20.0"
 
@@ -324,13 +325,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.43.96"
+version = "1.43.108"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "botocore-1.43.96-py3-none-any.whl", hash = "sha256:c21153a07b97e8497f4ffa83e340a055f3f479b074e6eedf7d0562a9bc861cac"},
-    {file = "botocore-1.43.96.tar.gz", hash = "sha256:3ef7c8c40738bb42a40eb0ac3dc2d9f1698946541874ae9b505e49f289272805"},
+    {file = "botocore-1.43.108-py3-none-any.whl", hash = "sha256:ab9d16c6b4350aaa54ed28202dfa2998b2d735fdbf3247eb60af469d8d48a5b8"},
+    {file = "botocore-1.43.108.tar.gz", hash = "sha256:ee4f75cf3bdbb0da7912e089950e8112f692016539d939312c771499958e6cfd"},
 ]
 
 [package.dependencies]
@@ -2049,13 +2050,13 @@ files = [
 
 [[package]]
 name = "mlflow"
-version = "3.16.1"
+version = "3.17.0"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "mlflow-3.16.1-py3-none-any.whl", hash = "sha256:e4dfe69ceae31dfc7b8480e76ffe6a7f36752bdfac30e058e6430ade1fb5920b"},
-    {file = "mlflow-3.16.1.tar.gz", hash = "sha256:044bd17d49ed216d3e38a537436622154daa5197ea41c1f3dedf155cbd8f40c0"},
+    {file = "mlflow-3.17.0-py3-none-any.whl", hash = "sha256:3954eaa998d4dd4ac8772894293a285bb5e3a428f6f9b37cac298e787423eafd"},
+    {file = "mlflow-3.17.0.tar.gz", hash = "sha256:7c1566b1aca61aec58520516df085948874c7956798dd6ae8ca17560ce06b089"},
 ]
 
 [package.dependencies]
@@ -2071,8 +2072,8 @@ graphene = "<4"
 gunicorn = {version = "<27", markers = "platform_system != \"Windows\""}
 huey = ">=2.5.4,<4"
 matplotlib = "<4"
-mlflow-skinny = "3.16.1"
-mlflow-tracing = "3.16.1"
+mlflow-skinny = "3.17.0"
+mlflow-tracing = "3.17.0"
 numpy = "<3"
 pandas = "<4"
 pyarrow = ">=4.0.0,<26"
@@ -2091,25 +2092,25 @@ aliyun-oss = ["aliyunstoreplugin"]
 auth = ["Flask-WTF (<2)"]
 azure = ["azure-identity (>=1.6.1)", "azure-storage-blob (>=12)"]
 databricks = ["azure-storage-file-datalake (>12)", "boto3 (>1)", "botocore", "databricks-agents (>=1.2.0,<2.0)", "google-cloud-storage (>=1.30.0)"]
-db = ["PyMySQL", "psycopg2-binary", "pymssql"]
+db = ["PyMySQL", "psycopg2-binary", "psycopg[binary]", "pymssql"]
 extras = ["azureml-core (>=1.2.0)", "boto3", "botocore", "google-cloud-storage (>=1.30.0)", "kubernetes", "prometheus-flask-exporter", "pyarrow", "pysftp", "requests-auth-aws-sigv4"]
 gateway = ["boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 genai = ["boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 jfrog = ["mlflow-jfrog-plugin"]
 kubernetes = ["kubernetes"]
-langchain = ["langchain (>=1.0.0,<=1.3.17)"]
+langchain = ["langchain (>=1.0.0,<=1.4.3)"]
 mcp = ["click (!=8.3.0)", "fastmcp (>=2.7.0,<4)"]
 sqlserver = ["mlflow-dbstore"]
 
 [[package]]
 name = "mlflow-skinny"
-version = "3.16.1"
+version = "3.17.0"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "mlflow_skinny-3.16.1-py3-none-any.whl", hash = "sha256:41ec1697710b91d001f8951bdc2d00391a277065ed82268c81706238fa2b918e"},
-    {file = "mlflow_skinny-3.16.1.tar.gz", hash = "sha256:7298b47942b1b0e826e02191653b8c203c3bb242fb699f8beec98e928dbec115"},
+    {file = "mlflow_skinny-3.17.0-py3-none-any.whl", hash = "sha256:443c1e8cbf04edc71434754e0dae2846db91814b342c65bbc05b131c2a68b7ba"},
+    {file = "mlflow_skinny-3.17.0.tar.gz", hash = "sha256:e887675d9f5ab57ec70860247b1cd5682bb719f626c69979ca7c99b5439877df"},
 ]
 
 [package.dependencies]
@@ -2140,25 +2141,25 @@ aliyun-oss = ["aliyunstoreplugin"]
 auth = ["Flask-WTF (<2)"]
 azure = ["azure-identity (>=1.6.1)", "azure-storage-blob (>=12)"]
 databricks = ["azure-storage-file-datalake (>12)", "boto3 (>1)", "botocore", "databricks-agents (>=1.2.0,<2.0)", "google-cloud-storage (>=1.30.0)"]
-db = ["PyMySQL", "psycopg2-binary", "pymssql"]
+db = ["PyMySQL", "psycopg2-binary", "psycopg[binary]", "pymssql"]
 extras = ["azureml-core (>=1.2.0)", "boto3", "botocore", "google-cloud-storage (>=1.30.0)", "kubernetes", "prometheus-flask-exporter", "pyarrow", "pysftp", "requests-auth-aws-sigv4"]
 gateway = ["boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 genai = ["boto3 (>=1.28.56,<2)", "fastapi (<1)", "slowapi (>=0.1.9,<1)", "tiktoken (<1)", "uvicorn[standard] (<1)", "watchfiles (<2)"]
 jfrog = ["mlflow-jfrog-plugin"]
 kubernetes = ["kubernetes"]
-langchain = ["langchain (>=1.0.0,<=1.3.17)"]
+langchain = ["langchain (>=1.0.0,<=1.4.3)"]
 mcp = ["click (!=8.3.0)", "fastmcp (>=2.7.0,<4)"]
 sqlserver = ["mlflow-dbstore"]
 
 [[package]]
 name = "mlflow-tracing"
-version = "3.16.1"
+version = "3.17.0"
 description = "MLflow Tracing SDK is an open-source, lightweight Python package that only includes the minimum set of dependencies and functionality to instrument your code/models/agents with MLflow Tracing."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "mlflow_tracing-3.16.1-py3-none-any.whl", hash = "sha256:b3ab97c7b4f919704e0cbe0653e6e9b89cf1f8a790f8bb1b4cf7f236df258e9e"},
-    {file = "mlflow_tracing-3.16.1.tar.gz", hash = "sha256:315ba1ace00d43498da2ad2b2bbb751f3198d6f9cd328168dfeb49911df41925"},
+    {file = "mlflow_tracing-3.17.0-py3-none-any.whl", hash = "sha256:8e5cb21bd53720f163098fe12a54e2cc5dff19e5b811889205ef10469248ee9e"},
+    {file = "mlflow_tracing-3.17.0.tar.gz", hash = "sha256:6259dc0149bb681d6738c98f861f02db43c87c18e0a20a7ec9cbce1b7f386512"},
 ]
 
 [package.dependencies]
@@ -2173,22 +2174,22 @@ pydantic = ">=2.0.0,<3"
 
 [[package]]
 name = "msal"
-version = "1.35.1"
+version = "1.39.0"
 description = "The Microsoft Authentication Library (MSAL) for Python library enables your app to access the Microsoft Cloud by supporting authentication of users with Microsoft Azure Active Directory accounts (AAD) and Microsoft Accounts (MSA) using industry standard OAuth2 and OpenID Connect."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "msal-1.35.1-py3-none-any.whl", hash = "sha256:8f4e82f34b10c19e326ec69f44dc6b30171f2f7098f3720ea8a9f0c11832caa3"},
-    {file = "msal-1.35.1.tar.gz", hash = "sha256:70cac18ab80a053bff86219ba64cfe3da1f307c74b009e2da57ef040eb1b5656"},
+    {file = "msal-1.39.0-py3-none-any.whl", hash = "sha256:2d2577886906cd7293850dffa2da29119966c213bfc6ec0cecf8bf7621e1ca77"},
+    {file = "msal-1.39.0.tar.gz", hash = "sha256:6ab7de335e6d7f5717e2c7e1dbf86e4dda2f6acf3c56773b78dc53ebc6395b5f"},
 ]
 
 [package.dependencies]
-cryptography = ">=2.5,<49"
+cryptography = ">=2.5,<51"
 PyJWT = {version = ">=1.0.0,<3", extras = ["crypto"]}
 requests = ">=2.0.0,<3"
 
 [package.extras]
-broker = ["pymsalruntime (>=0.14,<0.21)", "pymsalruntime (>=0.17,<0.21)", "pymsalruntime (>=0.18,<0.21)"]
+broker = ["pymsalruntime (>=0.20,<0.21)", "pymsalruntime (>=0.20,<0.21)", "pymsalruntime (>=0.20,<0.21)"]
 
 [[package]]
 name = "msal-extensions"
@@ -4483,4 +4484,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.15"
-content-hash = "05be8899650069c14bdba0c6a096dc212d53396333f49ef20bea4b3c98b860a3"
+content-hash = "f696c8fccf8250bf9e84f5c2d90257584fcd22f66085602e95bfc431bd7d2af3"
